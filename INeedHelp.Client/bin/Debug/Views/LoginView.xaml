@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="INeedHelp.Client.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:INeedHelp.Client.ViewModels" mc:Ignorable="d">
+    <Page.DataContext>
+        <ViewModels:LoginViewModel />
+    </Page.DataContext>
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="LOGIN" FontSize="50" Margin="20"/>
+            <TextBlock Text="USERNAME" Margin="5"/>
+            <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5"/>
+            <TextBlock Text="PASSWORD" Margin="5"/>
+            <PasswordBox x:Name="passwordBox" Margin="5"/>
+            <Button Command="{Binding Login}" 
+                    CommandParameter="{Binding ElementName=passwordBox}" 
+                    Margin="5">LOGIN</Button>
+        </StackPanel>
+    </Grid>
+</Page>
+
