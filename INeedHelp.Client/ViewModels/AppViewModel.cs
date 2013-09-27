@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using INeedHelp.Client.Commands;
+using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
+using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
 using Windows.Security.Credentials;
 using Windows.UI.Xaml;
@@ -16,16 +18,26 @@ namespace INeedHelp.Client.ViewModels
     public class AppViewModel : BaseViewModel
     {
         private NavigationService navigationService;
+        public string Username { get; set; }
+
+        public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
 
         public AppViewModel()
         {
             this.navigationService = new NavigationService();
+            CheckIsUserLogged();
+        }
 
-            if (AccountManager.CurrentUser != null)
+        private void CheckIsUserLogged()
+        {
+            var loggedUser = AccountManager.CurrentUser;
+
+            if (loggedUser != null)
             {
-                var username = AccountManager.CurrentUser.Username;
-                SuccessMessage = "Welcome, " + username;
+                Username = loggedUser.Username;
+                OnPropertyChanged("Username");
 
+                GetRequests();
             }
             else
             {
@@ -33,32 +45,11 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-        private ICommand goToLogin;
-        public ICommand GoToLogin
+        private async void GetRequests()
         {
-            get
-            {
-                if(this.goToLogin == null)
-                {
-                    this.goToLogin = new RelayCommand(HandleGoToLogin);
-                }
-
-                return this.goToLogin;
-            }
-        }
-
-        private ICommand goToRegister;
-        public ICommand GoToRegister
-        {
-            get
-            {
-                if(this.goToRegister == null)
-                {
-                    this.goToRegister = new RelayCommand(HandleGoToRegister);
-                }
-
-                return this.goToRegister;
-            }
+            HelpRequests = await HelpRequestsPersister.GetAllRequests(
+                AccountManager.CurrentUser.SessionKey);
+            OnPropertyChanged("HelpRequests");
         }
 
         private ICommand homeViewLoaded;
@@ -89,6 +80,25 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand goToAddRequest;
+        public ICommand GoToAddRequest
+        {
+            get
+            {
+                if(this.goToAddRequest == null)
+                {
+                    this.goToAddRequest = new RelayCommand(HandleGoToAddRequest);
+                }
+
+                return this.goToAddRequest;
+            }
+        }
+
+        private void HandleGoToAddRequest(object obj)
+        {
+            navigationService.Navigate(ViewType.AddRequest);
+        }
+
         private async void HandleLogout(object obj)
         {
             await AccountManager.ClearCurrentUser();
@@ -97,26 +107,7 @@ namespace INeedHelp.Client.ViewModels
 
         private void HandleHomeViewLoaded(object obj)
         {
-            if(AccountManager.CurrentUser != null)
-            {
-                var username = AccountManager.CurrentUser.Username;
-                SuccessMessage = "Welcome, " + username;
-                
-            }
-            else
-            {
-                navigationService.Navigate(ViewType.Login);
-            }
-        }
-
-        private void HandleGoToRegister(object obj)
-        {
-            navigationService.Navigate(ViewType.Register);
-        }
-
-        private void HandleGoToLogin(object obj)
-        {
-            navigationService.Navigate(ViewType.Login);
+            CheckIsUserLogged();
         }
     }
 }

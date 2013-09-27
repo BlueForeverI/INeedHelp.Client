@@ -44,11 +44,12 @@ namespace INeedHelp.Client.ViewModels
         {
             var passwordBox = obj as PasswordBox;
             var password = passwordBox.Password;
+            var passwordHash = Sha1Encrypter.ConvertToSha1(password);
 
             var userModel = new UserModel()
                                 {
                                     Username = Username,
-                                    PasswordHash = password,
+                                    PasswordHash = passwordHash,
                                     FirstName = FirstName,
                                     LastName = LastName
                                 };

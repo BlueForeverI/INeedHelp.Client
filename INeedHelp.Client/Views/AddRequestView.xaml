@@ -1,19 +1,17 @@
 ﻿<common:LayoutAwarePage
     x:Name="pageRoot"
-    x:Class="INeedHelp.Client.Views.HomeView"
+    x:Class="INeedHelp.Client.Views.AddRequestView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:INeedHelp.Client.Views"
     xmlns:common="using:INeedHelp.Client.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ViewModels="using:INeedHelp.Client.ViewModels" mc:Ignorable="d"
-    Loaded="HomeViewLoaded">
+    xmlns:ViewModels="using:INeedHelp.Client.ViewModels" mc:Ignorable="d">
 
     <Page.DataContext>
-        <ViewModels:AppViewModel />
+        <ViewModels:AddRequestViewModel />
     </Page.DataContext>
-
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -30,25 +28,17 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
-            <TextBlock Text="{Binding Username}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="ADD HELP REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <StackPanel Grid.Row="2">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
-                <Button Command="{Binding Logout}">Logout</Button>
-                <Button Command="{Binding GoToAddRequest}">Add Request</Button>
-            </StackPanel>
-            <ListBox ItemsSource="{Binding HelpRequests}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Text}" />
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left">
+            <TextBlock Text="TEXT" />
+            <TextBox Text="{Binding Text, Mode=TwoWay}" Width="300" FontSize="20"
+                     TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
+            <Button Command="{Binding AddRequest}">SUBMIT</Button>
+            <TextBlock Text="{Binding SuccessMessage}" />
         </StackPanel>
         
         <VisualStateManager.VisualStateGroups>
@@ -57,7 +47,7 @@
             <VisualStateGroup x:Name="ApplicationViewStates">
                 <VisualState x:Name="FullScreenLandscape"/>
                 <VisualState x:Name="Filled"/>
-
+    
                 <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
                 <VisualState x:Name="FullScreenPortrait">
                     <Storyboard>

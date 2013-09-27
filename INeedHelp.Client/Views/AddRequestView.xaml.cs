@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using INeedHelp.Client.Common;
-using INeedHelp.Client.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -21,9 +19,9 @@ namespace INeedHelp.Client.Views
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class HomeView : INeedHelp.Client.Common.LayoutAwarePage
+    public sealed partial class AddRequestView : INeedHelp.Client.Common.LayoutAwarePage
     {
-        public HomeView()
+        public AddRequestView()
         {
             this.InitializeComponent();
         }
@@ -49,11 +47,6 @@ namespace INeedHelp.Client.Views
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-        }
-
-        private void HomeViewLoaded(object sender, RoutedEventArgs e)
-        {
-            (DataContext as AppViewModel).HomeViewLoaded.Execute(null);
         }
     }
 }

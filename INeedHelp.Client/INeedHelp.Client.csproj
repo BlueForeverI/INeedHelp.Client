@@ -114,18 +114,27 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Data\HelpRequestsPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
     <Compile Include="Data\UsersPersister.cs" />
     <Compile Include="Helpers\AccountManager.cs" />
     <Compile Include="Helpers\LoggedUser.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="Helpers\Sha1Encrypter.cs" />
     <Compile Include="Helpers\ViewType.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\CoordinatesModel.cs" />
+    <Compile Include="Models\HelpRequestModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AddRequestViewModel.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Views\AddRequestView.xaml.cs">
+      <DependentUpon>AddRequestView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +167,10 @@
     <Page Include="Common\StandardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddRequestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>

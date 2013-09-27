@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using INeedHelp.Client.Models;
 using Newtonsoft.Json;
-using Xaml.Chat.Client.Data;
 
 namespace INeedHelp.Client.Data
 {
@@ -14,7 +13,7 @@ namespace INeedHelp.Client.Data
     {
         private static string baseUrl = "http://ineedhelp.apphb.com/api/users/";
 
-        public async static Task<UserModel> Login(string username, string passwordHash)
+        public static async Task<UserModel> Login(string username, string passwordHash)
         {
             var user = new UserModel() {Username = username, PasswordHash = passwordHash};
             var response = await HttpRequester.Post<UserModel>(baseUrl + "login", user);
@@ -22,13 +21,13 @@ namespace INeedHelp.Client.Data
             return response;
         }
 
-        public async static Task<UserModel> Register(UserModel model)
+        public static async Task<UserModel> Register(UserModel model)
         {
             var response = await HttpRequester.Post<UserModel>(baseUrl + "register", model);
             return response;
         }
 
-        public async static Task Logout(string sessionKey)
+        public static async Task Logout(string sessionKey)
         {
             var headers = new Dictionary<string, string>();
             headers.Add("X-sessionKey", sessionKey);

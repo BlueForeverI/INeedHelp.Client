@@ -1,14 +1,12 @@
 ﻿using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
-namespace Xaml.Chat.Client.Data
+namespace INeedHelp.Client.Data
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
-    using Newtonsoft.Json;
-
     class HttpRequester
     {
         public const string sessionKeyHeaderName = "X-sessionKey";

@@ -4,6 +4,7 @@ Assets\SplashScreen.png
 Assets\StoreLogo.png
 App.xaml
 Common\StandardStyles.xaml
+Views\AddRequestView.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
 Views\RegisterView.xaml

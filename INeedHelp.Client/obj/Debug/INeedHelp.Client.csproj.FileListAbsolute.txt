@@ -38,3 +38,6 @@ C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bi
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.g.i.cs
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.g.cs
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.xaml
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\AddRequestView.g.i.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\AddRequestView.g.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\AddRequestView.xaml

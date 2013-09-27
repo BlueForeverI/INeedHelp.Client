@@ -60,7 +60,8 @@ namespace INeedHelp.Client.ViewModels
         private async void HandleLogin(object obj)
         {
             var passwordBox = obj as PasswordBox;
-            var loggedUser = await UsersPersister.Login(Username, passwordBox.Password);
+            var passwordHash = Sha1Encrypter.ConvertToSha1(passwordBox.Password);
+            var loggedUser = await UsersPersister.Login(Username, passwordHash);
 
             if (loggedUser != null)
             {

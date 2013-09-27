@@ -22,6 +22,8 @@ namespace ParseStarterProject.Services
                     return typeof(HomeView);
                 case ViewType.Register:
                     return typeof(RegisterView);
+                case ViewType.AddRequest:
+                    return typeof(AddRequestView);
             }
 
             return null;

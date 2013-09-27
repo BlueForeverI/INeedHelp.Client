@@ -1,5 +1,5 @@
-2013/09/27-23:03:39.496 a50 Recovering log #6
-2013/09/27-23:03:39.514 a50 Level-0 table #8: started
-2013/09/27-23:03:39.528 a50 Level-0 table #8: 71845 bytes OK
-2013/09/27-23:03:39.542 a50 Delete type=0 #6
-2013/09/27-23:03:39.543 a50 Delete type=3 #4
+2013/09/27-23:46:04.790 11d0 Recovering log #9
+2013/09/27-23:46:04.790 11d0 Level-0 table #11: started
+2013/09/27-23:46:04.847 11d0 Level-0 table #11: 2937 bytes OK
+2013/09/27-23:46:04.993 11d0 Delete type=0 #9
+2013/09/27-23:46:04.993 11d0 Delete type=3 #7
