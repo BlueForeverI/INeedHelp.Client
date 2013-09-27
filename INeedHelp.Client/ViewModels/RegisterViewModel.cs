@@ -56,9 +56,11 @@ namespace INeedHelp.Client.ViewModels
             var loggedUser = await UsersPersister.Register(userModel);
             if(loggedUser != null)
             {
-                var vault = new PasswordVault();
-                var credential = new PasswordCredential("USER_CREDENTIALS", loggedUser.Username, loggedUser.SessionKey);
-                vault.Add(credential);
+                AccountManager.CurrentUser = new LoggedUser()
+                {
+                    Username = loggedUser.Username, 
+                    SessionKey = loggedUser.SessionKey
+                };
                 navigationService.Navigate(ViewType.Home);
             }
             else

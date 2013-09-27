@@ -21,7 +21,16 @@ namespace INeedHelp.Client.ViewModels
         {
             this.navigationService = new NavigationService();
 
-            
+            if (AccountManager.CurrentUser != null)
+            {
+                var username = AccountManager.CurrentUser.Username;
+                SuccessMessage = "Welcome, " + username;
+
+            }
+            else
+            {
+                navigationService.Navigate(ViewType.Login);
+            }
         }
 
         private ICommand goToLogin;
@@ -66,24 +75,35 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand logout;
+        public ICommand Logout
+        {
+            get
+            {
+                if(this.logout == null)
+                {
+                    this.logout = new RelayCommand(HandleLogout);
+                }
+
+                return this.logout;
+            }
+        }
+
+        private async void HandleLogout(object obj)
+        {
+            await AccountManager.ClearCurrentUser();
+            navigationService.Navigate(ViewType.Login);
+        }
+
         private void HandleHomeViewLoaded(object obj)
         {
-            var vault = new PasswordVault();
-
-            try
+            if(AccountManager.CurrentUser != null)
             {
-                var foundCredentials = vault.FindAllByResource("USER_CREDENTIALS").FirstOrDefault();
-                if (foundCredentials != null)
-                {
-                    var username = foundCredentials.UserName;
-                    SuccessMessage = "Welcome, " + username;
-                }
-                else
-                {
-                    navigationService.Navigate(ViewType.Login);
-                }
+                var username = AccountManager.CurrentUser.Username;
+                SuccessMessage = "Welcome, " + username;
+                
             }
-            catch (Exception)
+            else
             {
                 navigationService.Navigate(ViewType.Login);
             }

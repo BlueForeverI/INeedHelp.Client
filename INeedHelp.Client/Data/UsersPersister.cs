@@ -27,5 +27,13 @@ namespace INeedHelp.Client.Data
             var response = await HttpRequester.Post<UserModel>(baseUrl + "register", model);
             return response;
         }
+
+        public async static Task Logout(string sessionKey)
+        {
+            var headers = new Dictionary<string, string>();
+            headers.Add("X-sessionKey", sessionKey);
+
+            await HttpRequester.Get(baseUrl + "logout", headers);
+        }
     }
 }

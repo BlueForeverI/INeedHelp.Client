@@ -38,7 +38,7 @@
         </Grid>
 
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1">
             <TextBlock Text="USERNAME" Margin="5"/>
             <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5" Width="280"/>
             <TextBlock Text="PASSWORD" Margin="5"/>
@@ -46,7 +46,11 @@
             <Button Command="{Binding Login}" HorizontalAlignment="Stretch"
                     CommandParameter="{Binding ElementName=passwordBox}" 
                     Margin="5">LOGIN</Button>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
+            <HyperlinkButton Command="{Binding GoToRegister}" 
+                             HorizontalAlignment="Center"
+                             FontSize="25" Margin="0 20 0 0">Register an account</HyperlinkButton>
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" 
+                       Width="280" TextWrapping="Wrap"/>
         </StackPanel>
         
         <VisualStateManager.VisualStateGroups>

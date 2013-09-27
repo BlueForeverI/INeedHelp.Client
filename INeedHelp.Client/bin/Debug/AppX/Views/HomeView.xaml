@@ -9,9 +9,6 @@
     xmlns:Commands="using:INeedHelp.Client.Commands"
                                   
     >
-    <Page.Triggers>
-        
-    </Page.Triggers>
     <Page.DataContext>
         <ViewModels:AppViewModel />
     </Page.DataContext>
@@ -20,6 +17,7 @@
             <TextBlock Text="{Binding SuccessMessage}" />
             <Button Command="{Binding GoToRegister}">Register</Button>
             <Button Command="{Binding GoToLogin}">Login</Button>
+            <Button Command="{Binding Logout}">Logout</Button>
         </StackPanel>
     </Grid>
 </Page>

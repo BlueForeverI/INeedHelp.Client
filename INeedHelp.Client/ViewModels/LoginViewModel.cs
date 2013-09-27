@@ -38,6 +38,25 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand goToRegister;
+        public ICommand GoToRegister
+        {
+            get
+            {
+                if(this.goToRegister == null)
+                {
+                    this.goToRegister = new RelayCommand(HandleGoToRegister);
+                }
+
+                return this.goToRegister;
+            }
+        }
+
+        private void HandleGoToRegister(object obj)
+        {
+            navigationService.Navigate(ViewType.Register);
+        }
+
         private async void HandleLogin(object obj)
         {
             var passwordBox = obj as PasswordBox;
@@ -45,9 +64,12 @@ namespace INeedHelp.Client.ViewModels
 
             if (loggedUser != null)
             {
-                var vault = new PasswordVault();
-                var credential = new PasswordCredential("USER_CREDENTIALS", loggedUser.Username, loggedUser.SessionKey);
-                vault.Add(credential);
+                AccountManager.CurrentUser = new LoggedUser()
+                {
+                    Username = loggedUser.Username, 
+                    SessionKey = loggedUser.SessionKey
+                };
+
                 navigationService.Navigate(ViewType.Home);
             }
             else

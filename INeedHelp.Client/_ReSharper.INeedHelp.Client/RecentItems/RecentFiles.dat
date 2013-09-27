@@ -1,4 +1,48 @@
 ﻿<RecentFiles>
-  <RecentFiles />
-  <RecentEdits />
+  <RecentFiles>
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Common/f:StandardStyles.xaml" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/f:App.xaml" caret="1343" fromTop="25" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Commands/f:RelayCommand.cs" caret="869" fromTop="12" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/f:App.xaml.cs" caret="3427" fromTop="11" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Common/f:LayoutAwarePage.cs" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Common/f:BindableBase.cs" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Common/f:RichTextColumns.cs" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:HomeView.xaml" caret="704" fromTop="11" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:HomeView.xaml.cs" caret="1351" fromTop="22" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:LoggedUser.cs" caret="290" fromTop="11" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Data/f:HttpRequester.cs" caret="1622" fromTop="23" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Data/f:UsersPersister.cs" caret="1134" fromTop="17" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:AppViewModel.cs" caret="2443" fromTop="15" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:RegisterViewModel.cs" caret="1944" fromTop="49" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:NavigationService.cs" caret="660" fromTop="23" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Commands/f:UIBehavior.cs" caret="1086" fromTop="28" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Models/f:UserModel.cs" caret="229" fromTop="10" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:RegisterView.xaml.cs" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:ViewType.cs" caret="119" fromTop="6" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:BaseViewModel.cs" caret="434" fromTop="7" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:AccountManager.cs" caret="1561" fromTop="19" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:LoginViewModel.cs" caret="1472" fromTop="27" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:RegisterView.xaml" caret="1624" fromTop="10" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:LoginView.xaml" caret="2456" fromTop="51" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:BaseViewModel.cs" caret="707" fromTop="23" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Data/f:HttpRequester.cs" caret="3903" fromTop="16" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/f:App.xaml" caret="1343" fromTop="25" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:HomeView.xaml.cs" caret="1364" fromTop="16" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:ViewType.cs" caret="119" fromTop="6" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:NavigationService.cs" caret="639" fromTop="19" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:RegisterView.xaml.cs" caret="0" fromTop="0" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Commands/f:UIBehavior.cs" caret="1086" fromTop="28" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Models/f:UserModel.cs" caret="229" fromTop="10" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:RegisterView.xaml" caret="1664" fromTop="13" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:LoggedUser.cs" caret="288" fromTop="11" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:RegisterViewModel.cs" caret="1944" fromTop="19" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:HomeView.xaml" caret="1032" fromTop="10" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Data/f:UsersPersister.cs" caret="966" fromTop="12" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Helpers/f:AccountManager.cs" caret="1412" fromTop="23" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:AppViewModel.cs" caret="928" fromTop="32" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:ViewModels/f:LoginViewModel.cs" caret="1472" fromTop="27" />
+    <File id="6441A408-3749-4ECB-899B-A3BB08EF07CD/d:Views/f:LoginView.xaml" caret="2511" fromTop="6" />
+  </RecentEdits>
 </RecentFiles>
