@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using INeedHelp.Client.Common;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -19,9 +20,9 @@ namespace INeedHelp.Client.Views
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class LoginView : INeedHelp.Client.Common.LayoutAwarePage
+    public sealed partial class RegisterView : INeedHelp.Client.Common.LayoutAwarePage
     {
-        public LoginView()
+        public RegisterView()
         {
             this.InitializeComponent();
         }

@@ -19,9 +19,14 @@
                     </Style>
                     <Style TargetType="TextBox">
                         <Setter Property="FontSize" Value="30" />
+                        <Setter Property="Height" Value="50" />
                     </Style>
                     <Style TargetType="Button">
                         <Setter Property="FontSize" Value="30" />
+                    </Style>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="Height" Value="50" />
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>

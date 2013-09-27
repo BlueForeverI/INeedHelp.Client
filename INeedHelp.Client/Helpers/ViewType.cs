@@ -3,6 +3,7 @@
     public enum ViewType
     {
         Home,
-        Login
+        Login,
+        Register
     }
 }

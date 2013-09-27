@@ -16,25 +16,37 @@
     <AppXManifest Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-09-26T23:03:19.946</Modified>
+      <Modified>2013-09-27T13:24:47.843</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.exe">
       <PackagePath>INeedHelp.Client.exe</PackagePath>
-      <Modified>2013-09-26T23:19:43.913</Modified>
+      <Modified>2013-09-27T13:50:18.891</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.pdb">
       <PackagePath>INeedHelp.Client.pdb</PackagePath>
-      <Modified>2013-09-26T23:19:43.880</Modified>
+      <Modified>2013-09-27T13:50:18.831</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2013-09-26T22:37:12.685</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.dll">
+      <PackagePath>WinRT.Triggers.dll</PackagePath>
+      <Modified>2013-09-27T11:54:34.569</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml">
       <PackagePath>Newtonsoft.Json.xml</PackagePath>
       <Modified>2013-09-26T22:37:12.763</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.xml">
+      <PackagePath>WinRT.Triggers.xml</PackagePath>
+      <Modified>2013-09-27T11:54:34.581</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.pdb">
+      <PackagePath>WinRT.Triggers.pdb</PackagePath>
+      <Modified>2013-09-27T11:54:34.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -56,9 +68,13 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2012-03-15T18:42:52.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+      <Modified>2013-09-27T12:36:41.368</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2013-09-26T22:32:00.148</Modified>
+      <Modified>2013-09-27T08:22:04.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
@@ -66,15 +82,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\HomeView.xaml">
       <PackagePath>Views\HomeView.xaml</PackagePath>
-      <Modified>2013-09-26T22:20:20.481</Modified>
+      <Modified>2013-09-27T12:30:58.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\LoginView.xaml">
       <PackagePath>Views\LoginView.xaml</PackagePath>
-      <Modified>2013-09-26T23:04:36.865</Modified>
+      <Modified>2013-09-27T13:34:22.138</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RegisterView.xaml">
+      <PackagePath>Views\RegisterView.xaml</PackagePath>
+      <Modified>2013-09-27T13:50:13.240</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-09-26T22:11:48.513</Modified>
+      <Modified>2013-09-27T12:38:25.689</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

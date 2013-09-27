@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using INeedHelp.Client.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -34,6 +35,11 @@ namespace INeedHelp.Client.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
+        }
+
+        private void HomeViewLoadedHandler(object sender, RoutedEventArgs e)
+        {
+            (DataContext as AppViewModel).HomeViewLoaded.Execute(null);
         }
     }
 }

@@ -8,6 +8,7 @@ using INeedHelp.Client.Commands;
 using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using ParseStarterProject.Services;
+using Windows.Security.Credentials;
 using Windows.UI.Xaml.Controls;
 
 namespace INeedHelp.Client.ViewModels
@@ -40,8 +41,19 @@ namespace INeedHelp.Client.ViewModels
         private async void HandleLogin(object obj)
         {
             var passwordBox = obj as PasswordBox;
-            var result = await UsersPersister.Login(Username, passwordBox.Password);
-            navigationService.Navigate(ViewType.Home);
+            var loggedUser = await UsersPersister.Login(Username, passwordBox.Password);
+
+            if (loggedUser != null)
+            {
+                var vault = new PasswordVault();
+                var credential = new PasswordCredential("USER_CREDENTIALS", loggedUser.Username, loggedUser.SessionKey);
+                vault.Add(credential);
+                navigationService.Navigate(ViewType.Home);
+            }
+            else
+            {
+                ErrorMessage = "Invalid username or password";
+            }
         }
     }
 }

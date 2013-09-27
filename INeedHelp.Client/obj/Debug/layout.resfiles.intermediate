@@ -6,3 +6,5 @@ App.xaml
 Common\StandardStyles.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
+Views\RegisterView.xaml
+Common\ReadMe.txt

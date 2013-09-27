@@ -134,6 +134,10 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::System.Object));
                 break;
 
+            case "String":
+                xamlType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::System.String));
+                break;
+
             case "Windows.UI.Xaml.Controls.Page":
                 xamlType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.Page));
                 break;
@@ -142,20 +146,24 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.UserControl));
                 break;
 
-            case "String":
-                xamlType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::System.String));
-                break;
-
             case "INeedHelp.Client.ViewModels.AppViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.AppViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
                 userType.Activator = Activate_0_AppViewModel;
                 userType.AddMemberName("GoToLogin");
+                userType.AddMemberName("GoToRegister");
+                userType.AddMemberName("HomeViewLoaded");
                 xamlType = userType;
                 break;
 
             case "INeedHelp.Client.ViewModels.BaseViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.BaseViewModel), GetXamlTypeByName("Object"));
                 userType.Activator = Activate_1_BaseViewModel;
+                userType.AddMemberName("SuccessMessage");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
+                userType.AddMemberName("ErrorMessage");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
                 xamlType = userType;
                 break;
 
@@ -196,17 +204,47 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
             var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
             return that.GoToLogin;
         }
-        private object get_1_LoginViewModel_Username(object instance)
+        private object get_1_AppViewModel_GoToRegister(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.GoToRegister;
+        }
+        private object get_2_AppViewModel_HomeViewLoaded(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.HomeViewLoaded;
+        }
+        private object get_3_BaseViewModel_SuccessMessage(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
+            return that.SuccessMessage;
+        }
+        private void set_3_BaseViewModel_SuccessMessage(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
+            that.SuccessMessage = (global::System.String)Value;
+        }
+        private object get_4_BaseViewModel_ErrorMessage(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
+            return that.ErrorMessage;
+        }
+        private void set_4_BaseViewModel_ErrorMessage(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
+            that.ErrorMessage = (global::System.String)Value;
+        }
+        private object get_5_LoginViewModel_Username(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             return that.Username;
         }
-        private void set_1_LoginViewModel_Username(object instance, object Value)
+        private void set_5_LoginViewModel_Username(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_2_LoginViewModel_Login(object instance)
+        private object get_6_LoginViewModel_Login(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             return that.Login;
@@ -225,16 +263,40 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlMember.Getter = get_0_AppViewModel_GoToLogin;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.GoToRegister":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToRegister", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_1_AppViewModel_GoToRegister;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.HomeViewLoaded":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HomeViewLoaded", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_2_AppViewModel_HomeViewLoaded;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.BaseViewModel.SuccessMessage":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "SuccessMessage", "String");
+                xamlMember.Getter = get_3_BaseViewModel_SuccessMessage;
+                xamlMember.Setter = set_3_BaseViewModel_SuccessMessage;
+                break;
+            case "INeedHelp.Client.ViewModels.BaseViewModel.ErrorMessage":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "ErrorMessage", "String");
+                xamlMember.Getter = get_4_BaseViewModel_ErrorMessage;
+                xamlMember.Setter = set_4_BaseViewModel_ErrorMessage;
+                break;
             case "INeedHelp.Client.ViewModels.LoginViewModel.Username":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.LoginViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_1_LoginViewModel_Username;
-                xamlMember.Setter = set_1_LoginViewModel_Username;
+                xamlMember.Getter = get_5_LoginViewModel_Username;
+                xamlMember.Setter = set_5_LoginViewModel_Username;
                 break;
             case "INeedHelp.Client.ViewModels.LoginViewModel.Login":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.LoginViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Login", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_2_LoginViewModel_Login;
+                xamlMember.Getter = get_6_LoginViewModel_Login;
                 xamlMember.SetIsReadOnly();
                 break;
             }

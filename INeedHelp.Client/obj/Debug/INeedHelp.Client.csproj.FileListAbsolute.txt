@@ -32,3 +32,9 @@ C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bi
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Newtonsoft.Json.xml
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\INeedHelp.Client.csprojResolveAssemblyReference.cache
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\INeedHelp.Client.csproj.GenerateResource.Cache
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\WinRT.Triggers.dll
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\WinRT.Triggers.pdb
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\WinRT.Triggers.xml
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.g.i.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.g.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RegisterView.xaml

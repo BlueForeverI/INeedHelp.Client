@@ -22,8 +22,17 @@
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.dll">
+      <PackagePath>WinRT.Triggers.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml">
       <PackagePath>Newtonsoft.Json.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.xml">
+      <PackagePath>WinRT.Triggers.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\WinRTTriggers.1.5.0\lib\winrt45\WinRT.Triggers.pdb">
+      <PackagePath>WinRT.Triggers.pdb</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -41,6 +50,9 @@
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
     </AppxPackagedFile>
@@ -52,6 +64,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\LoginView.xaml">
       <PackagePath>Views\LoginView.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RegisterView.xaml">
+      <PackagePath>Views\RegisterView.xaml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
