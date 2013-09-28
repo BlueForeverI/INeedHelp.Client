@@ -16,6 +16,16 @@ namespace INeedHelp.Client.ViewModels
         public HelpRequestModel Request { get; set; }
         public string CommentText { get; set; }
 
+        public int CommentsCount
+        {
+            get { return Request.Comments.Count(); }
+        }
+
+        public int HelpersCount
+        {
+            get { return Request.Helpers.Count(); }
+        }
+
         public RequestDetailsViewModel()
         {
             
@@ -65,6 +75,7 @@ namespace INeedHelp.Client.ViewModels
                     await HelpRequestsPersister.GetRequestById(Request.Id, AccountManager.CurrentUser.SessionKey);
                 this.Request = fullRequest;
                 this.CommentText = "";
+
                 OnPropertyChanged("Request");
                 OnPropertyChanged("CommentText");
             }
@@ -75,7 +86,10 @@ namespace INeedHelp.Client.ViewModels
             var request = obj as HelpRequestModel;
             var fullRequest = await HelpRequestsPersister.GetRequestById(request.Id, AccountManager.CurrentUser.SessionKey);
             this.Request = fullRequest;
+
             OnPropertyChanged("Request");
+            OnPropertyChanged("CommentsCount");
+            OnPropertyChanged("HelpersCount");
         }
     }
 }

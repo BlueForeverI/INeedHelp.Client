@@ -121,6 +121,7 @@
     <Compile Include="Helpers\LoggedUser.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\Sha1Encrypter.cs" />
+    <Compile Include="Helpers\UserModelComparer.cs" />
     <Compile Include="Helpers\ViewType.cs" />
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\CoordinatesModel.cs" />

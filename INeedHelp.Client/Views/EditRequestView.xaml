@@ -13,7 +13,7 @@
     <Page.DataContext>
         <ViewModels:EditRequestViewModel />
     </Page.DataContext>
-    
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -35,7 +35,7 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="EDIT REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal"> 
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Left">
                 <TextBlock Text="TITLE" />
                 <TextBox Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" />
@@ -45,19 +45,52 @@
                 <Button Command="{Binding SaveChanges}">SAVE CHANGES</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>
-            <ListBox ItemsSource="{Binding Path=Request.Comments}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock>
+            <StackPanel>
+                <TextBlock>
+                    <Run Text="{Binding CommentsCount}" />
+                    <Run>Comments</Run>
+                </TextBlock>
+                <ListBox ItemsSource="{Binding Path=Request.Comments}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
                             <Run Text="{Binding Path=User.Username}" />
                             <Run Text=":" />
                             <Run Text="{Binding Content}" />
-                        </TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>
+                    <Run Text="{Binding HelpersCount}" />
+                    <Run>Helpers</Run>
+                </TextBlock>
+                <ListBox ItemsSource="{Binding Path=Request.Helpers}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Username}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Suggested Helpers" />
+                <ListBox ItemsSource="{Binding SuggestedHelpers}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Username}" />
+                                <Button Command="{Binding Path=DataContext.AddHelper, ElementName=pageRoot}"
+                                        CommandParameter="{Binding Id}">Add</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
         </StackPanel>
-        
+
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->

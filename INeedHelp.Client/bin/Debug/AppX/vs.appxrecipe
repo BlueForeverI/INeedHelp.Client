@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-09-28T14:43:45.477</Modified>
+      <Modified>2013-09-28T16:52:32.991</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.exe">
       <PackagePath>INeedHelp.Client.exe</PackagePath>
-      <Modified>2013-09-28T15:10:33.213</Modified>
+      <Modified>2013-09-28T17:03:47.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.pdb">
       <PackagePath>INeedHelp.Client.pdb</PackagePath>
-      <Modified>2013-09-28T15:10:33.167</Modified>
+      <Modified>2013-09-28T17:03:47.070</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\EditRequestView.xaml">
       <PackagePath>Views\EditRequestView.xaml</PackagePath>
-      <Modified>2013-09-28T15:08:08.054</Modified>
+      <Modified>2013-09-28T16:55:16.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\HomeView.xaml">
       <PackagePath>Views\HomeView.xaml</PackagePath>
@@ -106,7 +106,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RequestDetailsView.xaml">
       <PackagePath>Views\RequestDetailsView.xaml</PackagePath>
-      <Modified>2013-09-28T00:15:34.780</Modified>
+      <Modified>2013-09-28T17:03:42.485</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
