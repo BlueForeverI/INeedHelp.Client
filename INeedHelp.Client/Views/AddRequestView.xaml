@@ -33,23 +33,32 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="ADD HELP REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left">
-            <TextBlock Text="TITLE" />
-            <TextBox Text="{Binding Title, Mode=TwoWay}" Width="300" />
-            <TextBlock Text="TEXT" />
-            <TextBox Text="{Binding Text, Mode=TwoWay}" Width="300" FontSize="20"
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel HorizontalAlignment="Left">
+                <TextBlock Text="TITLE" />
+                <TextBox Text="{Binding Title, Mode=TwoWay}" Width="300" />
+                <TextBlock Text="TEXT" />
+                <TextBox Text="{Binding Text, Mode=TwoWay}" Width="300" FontSize="20"
                      TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
-            <Button Command="{Binding AddRequest}">SUBMIT</Button>
-            <TextBlock Text="{Binding SuccessMessage}" />
+                <Button Command="{Binding AddRequest}">SUBMIT</Button>
+                <TextBlock Text="{Binding SuccessMessage}" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>REQUEST PICTURE</TextBlock>
+                <Image Source="{Binding PictureUrl}" Width="350" Height="350" Stretch="Fill"/>
+                <Button Command="{Binding GetPictureFromCamera}">FROM CAMERA</Button>
+                <Button Command="{Binding GetPictureFromFile}">FROM FILE</Button>
+            </StackPanel>
         </StackPanel>
-        
+
+
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->
             <VisualStateGroup x:Name="ApplicationViewStates">
                 <VisualState x:Name="FullScreenLandscape"/>
                 <VisualState x:Name="Filled"/>
-    
+
                 <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
                 <VisualState x:Name="FullScreenPortrait">
                     <Storyboard>

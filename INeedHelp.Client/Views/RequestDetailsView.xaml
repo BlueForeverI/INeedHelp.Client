@@ -36,6 +36,8 @@
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Image Source="{Binding Path=Request.PictureUrl}" 
+                   Width="350" Height="350" Stretch="Fill" VerticalAlignment="Top"/>
             <StackPanel HorizontalAlignment="Left">
                 <TextBlock Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" />
                 <TextBlock Text="{Binding Path=Request.Text, Mode=TwoWay}" Width="300" FontSize="20"
