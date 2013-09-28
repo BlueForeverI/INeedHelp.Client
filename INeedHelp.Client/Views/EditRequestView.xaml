@@ -42,6 +42,7 @@
                 <TextBlock Text="TEXT" />
                 <TextBox Text="{Binding Path=Request.Text, Mode=TwoWay}" Width="300" FontSize="20"
                          TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
+                <CheckBox IsChecked="{Binding Path=Request.Solved, Mode=TwoWay}">Solved</CheckBox>
                 <Button Command="{Binding SaveChanges}">SAVE CHANGES</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>

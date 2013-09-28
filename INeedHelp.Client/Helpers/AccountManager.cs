@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using INeedHelp.Client.Data;
+using INeedHelp.Client.Models;
 using Windows.Security.Credentials;
+using Windows.Storage;
 
 namespace INeedHelp.Client.Helpers
 {
     public class AccountManager
     {
         private const string UserCredentialsToken = "USER_CREDENTIALS";
+        private static ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
-        public static LoggedUser CurrentUser
+        public static UserModel CurrentUser
         {
             get
             {
@@ -24,12 +27,20 @@ namespace INeedHelp.Client.Helpers
                     {
                         var username = foundCredentials.UserName;
                         var sessionKey = vault.Retrieve(UserCredentialsToken, username).Password;
-                        return new LoggedUser(){Username = username, SessionKey = sessionKey};
+                        return new UserModel()
+                                   {
+                                       Username = username, 
+                                       SessionKey = sessionKey,
+                                       ProfilePictureUrl = localSettings.Values["ProfilePictureUrl"].ToString(),
+                                       FirstName = localSettings.Values["FirstName"].ToString(),
+                                       LastName = localSettings.Values["LastName"].ToString(),
+                                       Reputation = (int)localSettings.Values["Reputation"]
+                                   };
                     }
                    
                     return null;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     return null;
                 }
@@ -39,7 +50,12 @@ namespace INeedHelp.Client.Helpers
                 var vault = new PasswordVault();
                 var credential = new PasswordCredential(UserCredentialsToken, 
                     value.Username, value.SessionKey);
-                vault.Add(credential);   
+                vault.Add(credential);
+
+                localSettings.Values["ProfilePictureUrl"] = value.ProfilePictureUrl;
+                localSettings.Values["FirstName"] = value.FirstName;
+                localSettings.Values["LastName"] = value.LastName;
+                localSettings.Values["Reputation"] = value.Reputation;
             }
         }
 
@@ -49,6 +65,12 @@ namespace INeedHelp.Client.Helpers
             await UsersPersister.Logout(sessionKey);
             var vault = new PasswordVault();
             vault.Remove(vault.Retrieve(UserCredentialsToken, CurrentUser.Username));
+
+
+            localSettings.Values["ProfilePictureUrl"] = "";
+            localSettings.Values["FirstName"] = "";
+            localSettings.Values["LastName"] = "";
+            localSettings.Values["Reputation"] = "";
         }
     }
 }

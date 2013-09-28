@@ -7,6 +7,7 @@ using System.Windows.Input;
 using INeedHelp.Client.Commands;
 using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
+using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
 using Windows.Security.Credentials;
 using Windows.UI.Xaml.Controls;
@@ -62,11 +63,7 @@ namespace INeedHelp.Client.ViewModels
 
             if (loggedUser != null)
             {
-                AccountManager.CurrentUser = new LoggedUser()
-                {
-                    Username = loggedUser.Username, 
-                    SessionKey = loggedUser.SessionKey
-                };
+                AccountManager.CurrentUser = loggedUser;
 
                 NavigationService.Navigate(ViewType.Home);
             }

@@ -9,6 +9,7 @@ using INeedHelp.Client.Commands;
 using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
+using ParseStarterProject.Services;
 
 namespace INeedHelp.Client.ViewModels
 {
@@ -45,17 +46,32 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand saveChanges;
+        public ICommand SaveChanges
+        {
+            get
+            {
+                if(this.saveChanges == null)
+                {
+                    this.saveChanges = new RelayCommand(HandleSaveChanges);
+                }
+
+                return this.saveChanges;
+            }
+        }
+
+        private async void HandleSaveChanges(object obj)
+        {
+            await HelpRequestsPersister.EditRequest(Request, AccountManager.CurrentUser.SessionKey);
+            NavigationService.Navigate(ViewType.MyRequests);
+            NotificationsManager.ShowNotification("Request details saved");
+        }
+
         private async void HandleAddHelper(object obj)
         {
             int id = (int) obj;
             await HelpRequestsPersister.AddHelper(Request.Id, id, AccountManager.CurrentUser.SessionKey);
-            var fullRequest = await HelpRequestsPersister.GetRequestById(Request.Id, AccountManager.CurrentUser.SessionKey);
-            this.Request = fullRequest;
-
-            OnPropertyChanged("Request");
-            OnPropertyChanged("CommentsCount");
-            OnPropertyChanged("HelpersCount");
-            OnPropertyChanged("SuggestedHelpers");
+            LoadRequest(Request.Id);
         }
 
         public int HelpersCount
@@ -72,10 +88,15 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-        private async  void HandleEditRequestLoaded(object obj)
+        private void HandleEditRequestLoaded(object obj)
         {
             var request = obj as HelpRequestModel;
-            var fullRequest = await HelpRequestsPersister.GetRequestById(request.Id, AccountManager.CurrentUser.SessionKey);
+            LoadRequest(request.Id);
+        }
+
+        private async void LoadRequest(int requestId)
+        {
+            var fullRequest = await HelpRequestsPersister.GetRequestById(requestId, AccountManager.CurrentUser.SessionKey);
             this.Request = fullRequest;
 
             OnPropertyChanged("Request");

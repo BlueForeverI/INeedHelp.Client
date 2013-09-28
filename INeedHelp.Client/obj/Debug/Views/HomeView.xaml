@@ -34,12 +34,16 @@
             </Grid.ColumnDefinitions>
             <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
-            <TextBlock Text="{Binding Username}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Width="50" Height="50" Source="{Binding UserPictureUrl}" />
+                <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
+                <Button Command="{Binding Logout}">Logout</Button>
+            </StackPanel>
         </Grid>
 
         <StackPanel Grid.Row="2">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
-                <Button Command="{Binding Logout}">Logout</Button>
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
                 <Button Command="{Binding GoToMyRequests}">My Requests</Button>
             </StackPanel>
@@ -53,7 +57,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
-        
+
         <VisualStateManager.VisualStateGroups>
 
             <!-- Visual states reflect the application's view state -->

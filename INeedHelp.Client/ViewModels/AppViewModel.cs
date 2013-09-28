@@ -18,6 +18,7 @@ namespace INeedHelp.Client.ViewModels
     public class AppViewModel : BaseViewModel
     {
         public string Username { get; set; }
+        public string UserPictureUrl { get; set; }
 
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
 
@@ -33,7 +34,10 @@ namespace INeedHelp.Client.ViewModels
             if (loggedUser != null)
             {
                 Username = loggedUser.Username;
+                UserPictureUrl = loggedUser.ProfilePictureUrl;
+
                 OnPropertyChanged("Username");
+                OnPropertyChanged("UserPictureUrl");
 
                 GetRequests();
             }

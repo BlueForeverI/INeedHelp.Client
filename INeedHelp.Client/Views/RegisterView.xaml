@@ -33,20 +33,28 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="REGISTER" 
                        Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
-        
-        <StackPanel HorizontalAlignment="Center" Grid.Row="1">
-            <TextBlock Text="USERNAME" Margin="5"/>
-            <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5" Width="280"/>
-            <TextBlock Text="PASSWORD" Margin="5"/>
-            <PasswordBox x:Name="passwordBox" Margin="5" Width="280" />
-            <TextBlock Text="FIRST NAME" Margin="5"/>
-            <TextBox Text="{Binding FirstName, Mode=TwoWay}" Margin="5" Width="280"/>
-            <TextBlock Text="LAST NAME" Margin="5"/>
-            <TextBox Text="{Binding LastName, Mode=TwoWay}" Margin="5" Width="280"/>
-            <Button Command="{Binding Register}" HorizontalAlignment="Stretch"
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBlock Text="USERNAME" Margin="5"/>
+                <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5" Width="280"/>
+                <TextBlock Text="PASSWORD" Margin="5"/>
+                <PasswordBox x:Name="passwordBox" Margin="5" Width="280" />
+                <TextBlock Text="FIRST NAME" Margin="5"/>
+                <TextBox Text="{Binding FirstName, Mode=TwoWay}" Margin="5" Width="280"/>
+                <TextBlock Text="LAST NAME" Margin="5"/>
+                <TextBox Text="{Binding LastName, Mode=TwoWay}" Margin="5" Width="280"/>
+                <Button Command="{Binding Register}" HorizontalAlignment="Stretch"
                     CommandParameter="{Binding ElementName=passwordBox}" 
                     Margin="5">REGISTER</Button>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
+                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>PROFILE PICTURE</TextBlock>
+                <Image Source="{Binding ProfilePictureUrl}" Width="200" Height="200" Stretch="Fill"/>
+                <Button Command="{Binding GetPictureFromCamera}">FROM CAMERA</Button>
+                <Button Command="{Binding GetPictureFromFile}">FROM FILE</Button>
+            </StackPanel>
         </StackPanel>
 
         <VisualStateManager.VisualStateGroups>

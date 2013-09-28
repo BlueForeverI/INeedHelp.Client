@@ -9,8 +9,13 @@ using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
+using Windows.Foundation;
+using Windows.Media.Capture;
 using Windows.Security.Credentials;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace INeedHelp.Client.ViewModels
 {
@@ -19,9 +24,12 @@ namespace INeedHelp.Client.ViewModels
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string ProfilePictureUrl { get; set; }
 
         public RegisterViewModel()
         {
+            ProfilePictureUrl = "http://i.imgur.com/0E6rxzp.png";
+            OnPropertyChanged("ProfilePictureUrl");
         }
 
         private ICommand register;
@@ -29,12 +37,73 @@ namespace INeedHelp.Client.ViewModels
         {
             get
             {
-                if(this.register == null)
+                if (this.register == null)
                 {
                     this.register = new RelayCommand(HandleRegister);
                 }
 
                 return this.register;
+            }
+        }
+
+        private ICommand getPictureFromCamera;
+        public ICommand GetPictureFromCamera
+        {
+            get
+            {
+                if (this.getPictureFromCamera == null)
+                {
+                    this.getPictureFromCamera = new RelayCommand(HandleGetPictureFromCamera);
+                }
+
+                return this.getPictureFromCamera;
+            }
+        }
+
+        private ICommand getPictureFromFile;
+        public ICommand GetPictureFromFile
+        {
+            get
+            {
+                if (this.getPictureFromFile == null)
+                {
+                    this.getPictureFromFile = new RelayCommand(HandleGetPictureFromFile);
+                }
+
+                return this.getPictureFromFile;
+            }
+        }
+
+        private async void HandleGetPictureFromFile(object obj)
+        {
+            var openPicker = new FileOpenPicker();
+
+            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary; ;
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.FileTypeFilter.Add(".bmp");
+
+            var file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+                var url = await ImageUploader.UploadImage(file);
+                ProfilePictureUrl = url;
+                OnPropertyChanged("ProfilePictureUrl");
+            }
+        }
+
+        private async void HandleGetPictureFromCamera(object obj)
+        {
+            var ui = new CameraCaptureUI();
+            ui.PhotoSettings.CroppedAspectRatio = new Size(4, 3);
+
+            var file = await ui.CaptureFileAsync(CameraCaptureUIMode.Photo);
+
+            if (file != null)
+            {
+                var url = await ImageUploader.UploadImage(file);
+                ProfilePictureUrl = url;
+                OnPropertyChanged("ProfilePictureUrl");
             }
         }
 
@@ -49,18 +118,15 @@ namespace INeedHelp.Client.ViewModels
                                     Username = Username,
                                     PasswordHash = passwordHash,
                                     FirstName = FirstName,
-                                    LastName = LastName
+                                    LastName = LastName,
+                                    ProfilePictureUrl = ProfilePictureUrl
                                 };
 
             var loggedUser = await UsersPersister.Register(userModel);
-            if(loggedUser != null)
+            if (loggedUser != null)
             {
-                AccountManager.CurrentUser = new LoggedUser()
-                {
-                    Username = loggedUser.Username, 
-                    SessionKey = loggedUser.SessionKey
-                };
-                
+                AccountManager.CurrentUser = loggedUser;
+
                 NavigationService.Navigate(ViewType.Home);
             }
             else

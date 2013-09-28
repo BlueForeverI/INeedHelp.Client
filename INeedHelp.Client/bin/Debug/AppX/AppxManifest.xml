@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="INeedHelp.Client.exe" EntryPoint="INeedHelp.Client.App">
-      <VisualElements DisplayName="INeedHelp.Client" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="INeedHelp.Client" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="INeedHelp.Client" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="INeedHelp.Client" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
@@ -30,6 +30,7 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v4.5" />
