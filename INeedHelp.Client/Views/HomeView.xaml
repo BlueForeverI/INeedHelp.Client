@@ -41,13 +41,14 @@
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
                 <Button Command="{Binding Logout}">Logout</Button>
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
+                <Button Command="{Binding GoToMyRequests}">My Requests</Button>
             </StackPanel>
             <ListBox ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"
                      SelectionMode="Single" 
                      SelectionChanged="HelpRequestsSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Text}" />
+                        <TextBlock Text="{Binding Title}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

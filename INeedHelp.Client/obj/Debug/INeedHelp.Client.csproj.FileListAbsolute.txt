@@ -44,3 +44,9 @@ C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\ob
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RequestDetailsView.g.i.cs
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RequestDetailsView.g.cs
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\RequestDetailsView.xaml
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\EditRequestView.g.i.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\EditRequestView.g.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\EditRequestView.xaml
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\MyRequestsView.g.i.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\MyRequestsView.g.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\MyRequestsView.xaml

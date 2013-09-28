@@ -54,5 +54,11 @@ namespace INeedHelp.Client.Data
             headers[sessionHeaderName] = sessionKey;
             await HttpRequester.Get(baseUrl + "solve/" + id.ToString(), headers);
         }
+
+        public static async Task<HelpRequestModel> GetRequestById(int id, string sessinoKey)
+        {
+            headers[sessionHeaderName] = sessinoKey;
+            return await HttpRequester.Get<HelpRequestModel>(baseUrl + "byid/" + id.ToString(), headers);
+        }
     }
 }

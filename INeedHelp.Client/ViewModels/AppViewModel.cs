@@ -92,6 +92,25 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand goToMyRequests;
+        public ICommand GoToMyRequests
+        {
+            get
+            {
+                if(this.goToMyRequests == null)
+                {
+                    this.goToMyRequests = new RelayCommand(HandleGoToMyRequests);
+                }
+
+                return this.goToMyRequests;
+            }
+        }
+
+        private void HandleGoToMyRequests(object obj)
+        {
+            NavigationService.Navigate(ViewType.MyRequests);
+        }
+
         private void HandleGoToAddRequest(object obj)
         {
             NavigationService.Navigate(ViewType.AddRequest);

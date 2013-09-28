@@ -6,6 +6,8 @@
         Login,
         Register,
         AddRequest,
-        RequestDetails
+        RequestDetails,
+        MyRequests,
+        EditRequest
     }
 }

@@ -114,19 +114,37 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
         private object Activate_0_LayoutAwarePage() { return new global::INeedHelp.Client.Common.LayoutAwarePage(); }
 
-        private object Activate_1_AppViewModel() { return new global::INeedHelp.Client.ViewModels.AppViewModel(); }
+        private object Activate_1_AddRequestViewModel() { return new global::INeedHelp.Client.ViewModels.AddRequestViewModel(); }
 
         private object Activate_2_BaseViewModel() { return new global::INeedHelp.Client.ViewModels.BaseViewModel(); }
 
-        private object Activate_4_HomeView() { return new global::INeedHelp.Client.Views.HomeView(); }
+        private object Activate_4_AddRequestView() { return new global::INeedHelp.Client.Views.AddRequestView(); }
 
-        private object Activate_5_LoginViewModel() { return new global::INeedHelp.Client.ViewModels.LoginViewModel(); }
+        private object Activate_5_EditRequestViewModel() { return new global::INeedHelp.Client.ViewModels.EditRequestViewModel(); }
 
-        private object Activate_6_LoginView() { return new global::INeedHelp.Client.Views.LoginView(); }
+        private object Activate_6_HelpRequestModel() { return new global::INeedHelp.Client.Models.HelpRequestModel(); }
 
-        private object Activate_7_RegisterViewModel() { return new global::INeedHelp.Client.ViewModels.RegisterViewModel(); }
+        private object Activate_7_EditRequestView() { return new global::INeedHelp.Client.Views.EditRequestView(); }
 
-        private object Activate_8_RegisterView() { return new global::INeedHelp.Client.Views.RegisterView(); }
+        private object Activate_8_AppViewModel() { return new global::INeedHelp.Client.ViewModels.AppViewModel(); }
+
+        private object Activate_10_HomeView() { return new global::INeedHelp.Client.Views.HomeView(); }
+
+        private object Activate_11_LoginViewModel() { return new global::INeedHelp.Client.ViewModels.LoginViewModel(); }
+
+        private object Activate_12_LoginView() { return new global::INeedHelp.Client.Views.LoginView(); }
+
+        private object Activate_13_MyHelpRequestsViewModel() { return new global::INeedHelp.Client.ViewModels.MyHelpRequestsViewModel(); }
+
+        private object Activate_14_MyRequestsView() { return new global::INeedHelp.Client.Views.MyRequestsView(); }
+
+        private object Activate_15_RegisterViewModel() { return new global::INeedHelp.Client.ViewModels.RegisterViewModel(); }
+
+        private object Activate_16_RegisterView() { return new global::INeedHelp.Client.Views.RegisterView(); }
+
+        private object Activate_17_RequestDetailsViewModel() { return new global::INeedHelp.Client.ViewModels.RequestDetailsViewModel(); }
+
+        private object Activate_18_RequestDetailsView() { return new global::INeedHelp.Client.Views.RequestDetailsView(); }
 
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
@@ -158,16 +176,16 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case "INeedHelp.Client.ViewModels.AppViewModel":
-                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.AppViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_1_AppViewModel;
-                userType.AddMemberName("Username");
+            case "INeedHelp.Client.ViewModels.AddRequestViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.AddRequestViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_1_AddRequestViewModel;
+                userType.AddMemberName("Text");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
                                                    "String");
-                userType.AddMemberName("GoToLogin");
-                userType.AddMemberName("GoToRegister");
-                userType.AddMemberName("HomeViewLoaded");
-                userType.AddMemberName("Logout");
+                userType.AddMemberName("Title");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
+                userType.AddMemberName("AddRequest");
                 xamlType = userType;
                 break;
 
@@ -188,15 +206,64 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+            case "INeedHelp.Client.Views.AddRequestView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.AddRequestView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
+                userType.Activator = Activate_4_AddRequestView;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.ViewModels.EditRequestViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.EditRequestViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_5_EditRequestViewModel;
+                userType.AddMemberName("HelpRequest");
+                userType.AddMemberName("EditRequestLoaded");
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.Models.HelpRequestModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Models.HelpRequestModel), GetXamlTypeByName("Object"));
+                userType.Activator = Activate_6_HelpRequestModel;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.Views.EditRequestView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.EditRequestView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
+                userType.Activator = Activate_7_EditRequestView;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.ViewModels.AppViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.AppViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_8_AppViewModel;
+                userType.AddMemberName("Username");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
+                userType.AddMemberName("HelpRequests");
+                AddToMapOfTypeToStandardName(typeof(global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>),
+                                                   "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                userType.AddMemberName("HomeViewLoaded");
+                userType.AddMemberName("Logout");
+                userType.AddMemberName("GoToAddRequest");
+                userType.AddMemberName("GoToMyRequests");
+                xamlType = userType;
+                break;
+
+            case "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>), null);
+                AddToMapOfTypeToStandardName(typeof(global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>),
+                                                   "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                xamlType = userType;
+                break;
+
             case "INeedHelp.Client.Views.HomeView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.HomeView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_4_HomeView;
+                userType.Activator = Activate_10_HomeView;
                 xamlType = userType;
                 break;
 
             case "INeedHelp.Client.ViewModels.LoginViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.LoginViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_5_LoginViewModel;
+                userType.Activator = Activate_11_LoginViewModel;
                 userType.AddMemberName("Username");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
                                                    "String");
@@ -207,13 +274,28 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             case "INeedHelp.Client.Views.LoginView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.LoginView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_6_LoginView;
+                userType.Activator = Activate_12_LoginView;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.ViewModels.MyHelpRequestsViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.MyHelpRequestsViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_13_MyHelpRequestsViewModel;
+                userType.AddMemberName("HelpRequests");
+                AddToMapOfTypeToStandardName(typeof(global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>),
+                                                   "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.Views.MyRequestsView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.MyRequestsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
+                userType.Activator = Activate_14_MyRequestsView;
                 xamlType = userType;
                 break;
 
             case "INeedHelp.Client.ViewModels.RegisterViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.RegisterViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_7_RegisterViewModel;
+                userType.Activator = Activate_15_RegisterViewModel;
                 userType.AddMemberName("Username");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
                                                    "String");
@@ -229,7 +311,25 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             case "INeedHelp.Client.Views.RegisterView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.RegisterView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_8_RegisterView;
+                userType.Activator = Activate_16_RegisterView;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.ViewModels.RequestDetailsViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.RequestDetailsViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_17_RequestDetailsViewModel;
+                userType.AddMemberName("Request");
+                userType.AddMemberName("CommentText");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
+                userType.AddMemberName("RequestDetailsLoaded");
+                userType.AddMemberName("AddComment");
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.Views.RequestDetailsView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.RequestDetailsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
+                userType.Activator = Activate_18_RequestDetailsView;
                 xamlType = userType;
                 break;
 
@@ -238,110 +338,200 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
         }
 
 
-        private object get_0_AppViewModel_Username(object instance)
+        private object get_0_AddRequestViewModel_Text(object instance)
         {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            return that.Username;
+            var that = (global::INeedHelp.Client.ViewModels.AddRequestViewModel)instance;
+            return that.Text;
         }
-        private void set_0_AppViewModel_Username(object instance, object Value)
+        private void set_0_AddRequestViewModel_Text(object instance, object Value)
         {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            that.Username = (global::System.String)Value;
+            var that = (global::INeedHelp.Client.ViewModels.AddRequestViewModel)instance;
+            that.Text = (global::System.String)Value;
         }
-        private object get_1_AppViewModel_GoToLogin(object instance)
+        private object get_1_AddRequestViewModel_Title(object instance)
         {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            return that.GoToLogin;
+            var that = (global::INeedHelp.Client.ViewModels.AddRequestViewModel)instance;
+            return that.Title;
         }
-        private object get_2_AppViewModel_GoToRegister(object instance)
+        private void set_1_AddRequestViewModel_Title(object instance, object Value)
         {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            return that.GoToRegister;
+            var that = (global::INeedHelp.Client.ViewModels.AddRequestViewModel)instance;
+            that.Title = (global::System.String)Value;
         }
-        private object get_3_AppViewModel_HomeViewLoaded(object instance)
+        private object get_2_AddRequestViewModel_AddRequest(object instance)
         {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            return that.HomeViewLoaded;
+            var that = (global::INeedHelp.Client.ViewModels.AddRequestViewModel)instance;
+            return that.AddRequest;
         }
-        private object get_4_AppViewModel_Logout(object instance)
-        {
-            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
-            return that.Logout;
-        }
-        private object get_5_BaseViewModel_SuccessMessage(object instance)
+        private object get_3_BaseViewModel_SuccessMessage(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
             return that.SuccessMessage;
         }
-        private void set_5_BaseViewModel_SuccessMessage(object instance, object Value)
+        private void set_3_BaseViewModel_SuccessMessage(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
             that.SuccessMessage = (global::System.String)Value;
         }
-        private object get_6_BaseViewModel_ErrorMessage(object instance)
+        private object get_4_BaseViewModel_ErrorMessage(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
             return that.ErrorMessage;
         }
-        private void set_6_BaseViewModel_ErrorMessage(object instance, object Value)
+        private void set_4_BaseViewModel_ErrorMessage(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.BaseViewModel)instance;
             that.ErrorMessage = (global::System.String)Value;
         }
-        private object get_7_LoginViewModel_Username(object instance)
+        private object get_5_EditRequestViewModel_HelpRequest(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.EditRequestViewModel)instance;
+            return that.HelpRequest;
+        }
+        private void set_5_EditRequestViewModel_HelpRequest(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.EditRequestViewModel)instance;
+            that.HelpRequest = (global::INeedHelp.Client.Models.HelpRequestModel)Value;
+        }
+        private object get_6_EditRequestViewModel_EditRequestLoaded(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.EditRequestViewModel)instance;
+            return that.EditRequestLoaded;
+        }
+        private object get_7_AppViewModel_Username(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.Username;
+        }
+        private void set_7_AppViewModel_Username(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            that.Username = (global::System.String)Value;
+        }
+        private object get_8_AppViewModel_HelpRequests(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.HelpRequests;
+        }
+        private void set_8_AppViewModel_HelpRequests(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            that.HelpRequests = (global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>)Value;
+        }
+        private object get_9_AppViewModel_HomeViewLoaded(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.HomeViewLoaded;
+        }
+        private object get_10_AppViewModel_Logout(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.Logout;
+        }
+        private object get_11_AppViewModel_GoToAddRequest(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.GoToAddRequest;
+        }
+        private object get_12_AppViewModel_GoToMyRequests(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.AppViewModel)instance;
+            return that.GoToMyRequests;
+        }
+        private object get_13_LoginViewModel_Username(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             return that.Username;
         }
-        private void set_7_LoginViewModel_Username(object instance, object Value)
+        private void set_13_LoginViewModel_Username(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_8_LoginViewModel_Login(object instance)
+        private object get_14_LoginViewModel_Login(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             return that.Login;
         }
-        private object get_9_LoginViewModel_GoToRegister(object instance)
+        private object get_15_LoginViewModel_GoToRegister(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.LoginViewModel)instance;
             return that.GoToRegister;
         }
-        private object get_10_RegisterViewModel_Username(object instance)
+        private object get_16_MyHelpRequestsViewModel_HelpRequests(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.MyHelpRequestsViewModel)instance;
+            return that.HelpRequests;
+        }
+        private void set_16_MyHelpRequestsViewModel_HelpRequests(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.MyHelpRequestsViewModel)instance;
+            that.HelpRequests = (global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>)Value;
+        }
+        private object get_17_RegisterViewModel_Username(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             return that.Username;
         }
-        private void set_10_RegisterViewModel_Username(object instance, object Value)
+        private void set_17_RegisterViewModel_Username(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             that.Username = (global::System.String)Value;
         }
-        private object get_11_RegisterViewModel_FirstName(object instance)
+        private object get_18_RegisterViewModel_FirstName(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             return that.FirstName;
         }
-        private void set_11_RegisterViewModel_FirstName(object instance, object Value)
+        private void set_18_RegisterViewModel_FirstName(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             that.FirstName = (global::System.String)Value;
         }
-        private object get_12_RegisterViewModel_LastName(object instance)
+        private object get_19_RegisterViewModel_LastName(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             return that.LastName;
         }
-        private void set_12_RegisterViewModel_LastName(object instance, object Value)
+        private void set_19_RegisterViewModel_LastName(object instance, object Value)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             that.LastName = (global::System.String)Value;
         }
-        private object get_13_RegisterViewModel_Register(object instance)
+        private object get_20_RegisterViewModel_Register(object instance)
         {
             var that = (global::INeedHelp.Client.ViewModels.RegisterViewModel)instance;
             return that.Register;
+        }
+        private object get_21_RequestDetailsViewModel_Request(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            return that.Request;
+        }
+        private void set_21_RequestDetailsViewModel_Request(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            that.Request = (global::INeedHelp.Client.Models.HelpRequestModel)Value;
+        }
+        private object get_22_RequestDetailsViewModel_CommentText(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            return that.CommentText;
+        }
+        private void set_22_RequestDetailsViewModel_CommentText(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            that.CommentText = (global::System.String)Value;
+        }
+        private object get_23_RequestDetailsViewModel_RequestDetailsLoaded(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            return that.RequestDetailsLoaded;
+        }
+        private object get_24_RequestDetailsViewModel_AddComment(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
+            return that.AddComment;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -351,88 +541,154 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "INeedHelp.Client.ViewModels.AppViewModel.Username":
-                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
-                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_0_AppViewModel_Username;
-                xamlMember.Setter = set_0_AppViewModel_Username;
+            case "INeedHelp.Client.ViewModels.AddRequestViewModel.Text":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AddRequestViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Text", "String");
+                xamlMember.Getter = get_0_AddRequestViewModel_Text;
+                xamlMember.Setter = set_0_AddRequestViewModel_Text;
                 break;
-            case "INeedHelp.Client.ViewModels.AppViewModel.GoToLogin":
-                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
-                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToLogin", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_1_AppViewModel_GoToLogin;
-                xamlMember.SetIsReadOnly();
+            case "INeedHelp.Client.ViewModels.AddRequestViewModel.Title":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AddRequestViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Title", "String");
+                xamlMember.Getter = get_1_AddRequestViewModel_Title;
+                xamlMember.Setter = set_1_AddRequestViewModel_Title;
                 break;
-            case "INeedHelp.Client.ViewModels.AppViewModel.GoToRegister":
-                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
-                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToRegister", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_2_AppViewModel_GoToRegister;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "INeedHelp.Client.ViewModels.AppViewModel.HomeViewLoaded":
-                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
-                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HomeViewLoaded", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_3_AppViewModel_HomeViewLoaded;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "INeedHelp.Client.ViewModels.AppViewModel.Logout":
-                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
-                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Logout", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_4_AppViewModel_Logout;
+            case "INeedHelp.Client.ViewModels.AddRequestViewModel.AddRequest":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AddRequestViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "AddRequest", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_2_AddRequestViewModel_AddRequest;
                 xamlMember.SetIsReadOnly();
                 break;
             case "INeedHelp.Client.ViewModels.BaseViewModel.SuccessMessage":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "SuccessMessage", "String");
-                xamlMember.Getter = get_5_BaseViewModel_SuccessMessage;
-                xamlMember.Setter = set_5_BaseViewModel_SuccessMessage;
+                xamlMember.Getter = get_3_BaseViewModel_SuccessMessage;
+                xamlMember.Setter = set_3_BaseViewModel_SuccessMessage;
                 break;
             case "INeedHelp.Client.ViewModels.BaseViewModel.ErrorMessage":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "ErrorMessage", "String");
-                xamlMember.Getter = get_6_BaseViewModel_ErrorMessage;
-                xamlMember.Setter = set_6_BaseViewModel_ErrorMessage;
+                xamlMember.Getter = get_4_BaseViewModel_ErrorMessage;
+                xamlMember.Setter = set_4_BaseViewModel_ErrorMessage;
+                break;
+            case "INeedHelp.Client.ViewModels.EditRequestViewModel.HelpRequest":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.EditRequestViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HelpRequest", "INeedHelp.Client.Models.HelpRequestModel");
+                xamlMember.Getter = get_5_EditRequestViewModel_HelpRequest;
+                xamlMember.Setter = set_5_EditRequestViewModel_HelpRequest;
+                break;
+            case "INeedHelp.Client.ViewModels.EditRequestViewModel.EditRequestLoaded":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.EditRequestViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "EditRequestLoaded", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_6_EditRequestViewModel_EditRequestLoaded;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.Username":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Username", "String");
+                xamlMember.Getter = get_7_AppViewModel_Username;
+                xamlMember.Setter = set_7_AppViewModel_Username;
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.HelpRequests":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HelpRequests", "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                xamlMember.Getter = get_8_AppViewModel_HelpRequests;
+                xamlMember.Setter = set_8_AppViewModel_HelpRequests;
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.HomeViewLoaded":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HomeViewLoaded", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_9_AppViewModel_HomeViewLoaded;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.Logout":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Logout", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_10_AppViewModel_Logout;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.GoToAddRequest":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToAddRequest", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_11_AppViewModel_GoToAddRequest;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.AppViewModel.GoToMyRequests":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.AppViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToMyRequests", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_12_AppViewModel_GoToMyRequests;
+                xamlMember.SetIsReadOnly();
                 break;
             case "INeedHelp.Client.ViewModels.LoginViewModel.Username":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.LoginViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_7_LoginViewModel_Username;
-                xamlMember.Setter = set_7_LoginViewModel_Username;
+                xamlMember.Getter = get_13_LoginViewModel_Username;
+                xamlMember.Setter = set_13_LoginViewModel_Username;
                 break;
             case "INeedHelp.Client.ViewModels.LoginViewModel.Login":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.LoginViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Login", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_8_LoginViewModel_Login;
+                xamlMember.Getter = get_14_LoginViewModel_Login;
                 xamlMember.SetIsReadOnly();
                 break;
             case "INeedHelp.Client.ViewModels.LoginViewModel.GoToRegister":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.LoginViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "GoToRegister", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_9_LoginViewModel_GoToRegister;
+                xamlMember.Getter = get_15_LoginViewModel_GoToRegister;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.MyHelpRequestsViewModel.HelpRequests":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.MyHelpRequestsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HelpRequests", "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                xamlMember.Getter = get_16_MyHelpRequestsViewModel_HelpRequests;
+                xamlMember.Setter = set_16_MyHelpRequestsViewModel_HelpRequests;
                 break;
             case "INeedHelp.Client.ViewModels.RegisterViewModel.Username":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RegisterViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Username", "String");
-                xamlMember.Getter = get_10_RegisterViewModel_Username;
-                xamlMember.Setter = set_10_RegisterViewModel_Username;
+                xamlMember.Getter = get_17_RegisterViewModel_Username;
+                xamlMember.Setter = set_17_RegisterViewModel_Username;
                 break;
             case "INeedHelp.Client.ViewModels.RegisterViewModel.FirstName":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RegisterViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "FirstName", "String");
-                xamlMember.Getter = get_11_RegisterViewModel_FirstName;
-                xamlMember.Setter = set_11_RegisterViewModel_FirstName;
+                xamlMember.Getter = get_18_RegisterViewModel_FirstName;
+                xamlMember.Setter = set_18_RegisterViewModel_FirstName;
                 break;
             case "INeedHelp.Client.ViewModels.RegisterViewModel.LastName":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RegisterViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "LastName", "String");
-                xamlMember.Getter = get_12_RegisterViewModel_LastName;
-                xamlMember.Setter = set_12_RegisterViewModel_LastName;
+                xamlMember.Getter = get_19_RegisterViewModel_LastName;
+                xamlMember.Setter = set_19_RegisterViewModel_LastName;
                 break;
             case "INeedHelp.Client.ViewModels.RegisterViewModel.Register":
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RegisterViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Register", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_13_RegisterViewModel_Register;
+                xamlMember.Getter = get_20_RegisterViewModel_Register;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.RequestDetailsViewModel.Request":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RequestDetailsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "Request", "INeedHelp.Client.Models.HelpRequestModel");
+                xamlMember.Getter = get_21_RequestDetailsViewModel_Request;
+                xamlMember.Setter = set_21_RequestDetailsViewModel_Request;
+                break;
+            case "INeedHelp.Client.ViewModels.RequestDetailsViewModel.CommentText":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RequestDetailsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "CommentText", "String");
+                xamlMember.Getter = get_22_RequestDetailsViewModel_CommentText;
+                xamlMember.Setter = set_22_RequestDetailsViewModel_CommentText;
+                break;
+            case "INeedHelp.Client.ViewModels.RequestDetailsViewModel.RequestDetailsLoaded":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RequestDetailsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "RequestDetailsLoaded", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_23_RequestDetailsViewModel_RequestDetailsLoaded;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.RequestDetailsViewModel.AddComment":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RequestDetailsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "AddComment", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_24_RequestDetailsViewModel_AddComment;
                 xamlMember.SetIsReadOnly();
                 break;
             }

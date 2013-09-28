@@ -5,8 +5,10 @@ Assets\StoreLogo.png
 App.xaml
 Common\StandardStyles.xaml
 Views\AddRequestView.xaml
+Views\EditRequestView.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
+Views\MyRequestsView.xaml
 Views\RegisterView.xaml
 Views\RequestDetailsView.xaml
 Common\ReadMe.txt

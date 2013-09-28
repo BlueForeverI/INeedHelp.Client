@@ -51,20 +51,30 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleAddComment(object obj)
         {
-            var comment = new CommentModel()
-                              {
-                                  Content = this.CommentText
-                              };
+            if(!string.IsNullOrEmpty(CommentText))
+            {
+                var comment = new CommentModel()
+                                  {
+                                      Content = this.CommentText
+                                  };
 
-            await HelpRequestsPersister.AddComment(Request.Id, comment, 
-                AccountManager.CurrentUser.SessionKey);
-            SuccessMessage = "Comment added";
+                await HelpRequestsPersister.AddComment(Request.Id, comment,
+                                                       AccountManager.CurrentUser.SessionKey);
+
+                var fullRequest =
+                    await HelpRequestsPersister.GetRequestById(Request.Id, AccountManager.CurrentUser.SessionKey);
+                this.Request = fullRequest;
+                this.CommentText = "";
+                OnPropertyChanged("Request");
+                OnPropertyChanged("CommentText");
+            }
         }
 
-        private void HandleRequestDetailsLoaded(object obj)
+        private async void HandleRequestDetailsLoaded(object obj)
         {
             var request = obj as HelpRequestModel;
-            this.Request = request;
+            var fullRequest = await HelpRequestsPersister.GetRequestById(request.Id, AccountManager.CurrentUser.SessionKey);
+            this.Request = fullRequest;
             OnPropertyChanged("Request");
         }
     }

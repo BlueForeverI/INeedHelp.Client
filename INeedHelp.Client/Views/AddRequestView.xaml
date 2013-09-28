@@ -34,6 +34,8 @@
         </Grid>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Left">
+            <TextBlock Text="TITLE" />
+            <TextBox Text="{Binding Title, Mode=TwoWay}" Width="300" />
             <TextBlock Text="TEXT" />
             <TextBox Text="{Binding Text, Mode=TwoWay}" Width="300" FontSize="20"
                      TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
