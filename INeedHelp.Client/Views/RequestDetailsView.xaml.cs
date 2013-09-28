@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using INeedHelp.Client.Common;
-using INeedHelp.Client.Helpers;
 using INeedHelp.Client.ViewModels;
-using ParseStarterProject.Services;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,9 +21,9 @@ namespace INeedHelp.Client.Views
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class HomeView : INeedHelp.Client.Common.LayoutAwarePage
+    public sealed partial class RequestDetailsView : INeedHelp.Client.Common.LayoutAwarePage
     {
-        public HomeView()
+        public RequestDetailsView()
         {
             this.InitializeComponent();
         }
@@ -41,6 +39,7 @@ namespace INeedHelp.Client.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            (DataContext as RequestDetailsViewModel).RequestDetailsLoaded.Execute(navigationParameter);
         }
 
         /// <summary>
@@ -51,17 +50,6 @@ namespace INeedHelp.Client.Views
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-        }
-
-        private void HomeViewLoaded(object sender, RoutedEventArgs e)
-        {
-            (DataContext as AppViewModel).HomeViewLoaded.Execute(null);
-        }
-
-        private void HelpRequestsSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var selected = ListBoxRequests.SelectedValue;
-            NavigationService.Navigate(ViewType.RequestDetails, selected);
         }
     }
 }

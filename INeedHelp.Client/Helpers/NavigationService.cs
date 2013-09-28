@@ -12,7 +12,7 @@ namespace ParseStarterProject.Services
 {
     public class NavigationService
     {
-        private Type GetViewType(ViewType view)
+        private static Type GetViewType(ViewType view)
         {
             switch (view)
             {
@@ -24,14 +24,16 @@ namespace ParseStarterProject.Services
                     return typeof(RegisterView);
                 case ViewType.AddRequest:
                     return typeof(AddRequestView);
+                case ViewType.RequestDetails:
+                    return typeof(RequestDetailsView);
             }
 
             return null;
         }
 
-        public void Navigate(ViewType sourcePageType)
+        public static void Navigate(ViewType sourcePageType)
         {
-            var pageType = this.GetViewType(sourcePageType);
+            var pageType = GetViewType(sourcePageType);
 
             if (pageType != null)
             {
@@ -40,9 +42,9 @@ namespace ParseStarterProject.Services
             }
         }
 
-        public void Navigate(ViewType sourcePageType, object parameter)
+        public static void Navigate(ViewType sourcePageType, object parameter)
         {
-            var pageType = this.GetViewType(sourcePageType);
+            var pageType = GetViewType(sourcePageType);
 
             if (pageType != null)
             {
@@ -50,7 +52,7 @@ namespace ParseStarterProject.Services
             }
         }
 
-        public void GoBack()
+        public static void GoBack()
         {
             ((Frame)Window.Current.Content).GoBack();
         }

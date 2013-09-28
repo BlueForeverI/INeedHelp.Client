@@ -42,7 +42,9 @@
                 <Button Command="{Binding Logout}">Logout</Button>
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
             </StackPanel>
-            <ListBox ItemsSource="{Binding HelpRequests}">
+            <ListBox ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"
+                     SelectionMode="Single" 
+                     SelectionChanged="HelpRequestsSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Text}" />

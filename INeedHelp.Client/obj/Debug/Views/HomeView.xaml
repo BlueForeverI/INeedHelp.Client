@@ -32,7 +32,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='2' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
             <TextBlock Text="{Binding Username}" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
         </Grid>
@@ -42,7 +42,9 @@
                 <Button Command="{Binding Logout}">Logout</Button>
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
             </StackPanel>
-            <ListBox ItemsSource="{Binding HelpRequests}">
+            <ListBox x:ConnectionId='2' ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"
+                     SelectionMode="Single" 
+                                                                    >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Text}" />

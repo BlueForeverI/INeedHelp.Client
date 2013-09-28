@@ -15,11 +15,8 @@ namespace INeedHelp.Client.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        private NavigationService navigationService;
-
         public LoginViewModel()
         {
-            this.navigationService = new NavigationService();
         }
 
         public string Username { get; set; }
@@ -54,7 +51,7 @@ namespace INeedHelp.Client.ViewModels
 
         private void HandleGoToRegister(object obj)
         {
-            navigationService.Navigate(ViewType.Register);
+            NavigationService.Navigate(ViewType.Register);
         }
 
         private async void HandleLogin(object obj)
@@ -71,7 +68,7 @@ namespace INeedHelp.Client.ViewModels
                     SessionKey = loggedUser.SessionKey
                 };
 
-                navigationService.Navigate(ViewType.Home);
+                NavigationService.Navigate(ViewType.Home);
             }
             else
             {

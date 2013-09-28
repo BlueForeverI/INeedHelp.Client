@@ -16,14 +16,12 @@ namespace INeedHelp.Client.ViewModels
 {
     public class RegisterViewModel : BaseViewModel
     {
-        private NavigationService navigationService;
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
         public RegisterViewModel()
         {
-            this.navigationService = new NavigationService();
         }
 
         private ICommand register;
@@ -62,7 +60,8 @@ namespace INeedHelp.Client.ViewModels
                     Username = loggedUser.Username, 
                     SessionKey = loggedUser.SessionKey
                 };
-                navigationService.Navigate(ViewType.Home);
+                
+                NavigationService.Navigate(ViewType.Home);
             }
             else
             {

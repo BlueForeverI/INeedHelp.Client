@@ -7,5 +7,7 @@ namespace INeedHelp.Client.Models
 {
     public class CommentModel
     {
+        public UserModel User { get; set; }
+        public string Content { get; set; }
     }
 }

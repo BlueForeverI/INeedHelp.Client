@@ -8,4 +8,5 @@ Views\AddRequestView.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
 Views\RegisterView.xaml
+Views\RequestDetailsView.xaml
 Common\ReadMe.txt

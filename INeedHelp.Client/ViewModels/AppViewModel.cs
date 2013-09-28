@@ -17,14 +17,12 @@ namespace INeedHelp.Client.ViewModels
 {
     public class AppViewModel : BaseViewModel
     {
-        private NavigationService navigationService;
         public string Username { get; set; }
 
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
 
         public AppViewModel()
         {
-            this.navigationService = new NavigationService();
             CheckIsUserLogged();
         }
 
@@ -41,7 +39,7 @@ namespace INeedHelp.Client.ViewModels
             }
             else
             {
-                navigationService.Navigate(ViewType.Login);
+                NavigationService.Navigate(ViewType.Login);
             }
         }
 
@@ -96,13 +94,13 @@ namespace INeedHelp.Client.ViewModels
 
         private void HandleGoToAddRequest(object obj)
         {
-            navigationService.Navigate(ViewType.AddRequest);
+            NavigationService.Navigate(ViewType.AddRequest);
         }
 
         private async void HandleLogout(object obj)
         {
             await AccountManager.ClearCurrentUser();
-            navigationService.Navigate(ViewType.Login);
+            NavigationService.Navigate(ViewType.Login);
         }
 
         private void HandleHomeViewLoaded(object obj)
