@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Callisto.Controls;
+using INeedHelp.Client.Helpers;
+using INeedHelp.Client.ViewModels;
 using INeedHelp.Client.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ApplicationSettings;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,6 +30,9 @@ namespace INeedHelp.Client
     /// </summary>
     sealed partial class App : Application
     {
+        private ProfileSettingsView settingsView;
+        private ProfileSettingsViewModel settingsViewModel;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,6 +41,28 @@ namespace INeedHelp.Client
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            settingsView = new ProfileSettingsView();
+            settingsViewModel = new ProfileSettingsViewModel();
+            settingsView.DataContext = settingsViewModel;
+        }
+
+        private void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+        {
+            SettingsCommand command = new SettingsCommand("profile-settings", "Profile Settings",
+                                                          HandleProfileSettingsCommandRequest);
+            args.Request.ApplicationCommands.Add(command);
+        }
+
+        private void HandleProfileSettingsCommandRequest(IUICommand command)
+        {
+            var settings = new SettingsFlyout();
+            settings.Content = settingsView;
+            settingsView.DataContext = settingsViewModel;
+            settingsViewModel.PictureReceived += (sender, args) => { HandleProfileSettingsCommandRequest(command);};
+            settings.HeaderText = "Profile Settings";
+            settings.IsOpen = true;
+
         }
 
         /// <summary>
@@ -72,6 +103,9 @@ namespace INeedHelp.Client
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+
+            SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
         }
 
         /// <summary>

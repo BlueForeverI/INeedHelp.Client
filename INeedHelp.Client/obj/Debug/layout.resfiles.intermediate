@@ -9,6 +9,7 @@ Views\EditRequestView.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
 Views\MyRequestsView.xaml
+Views\ProfileSettingsView.xaml
 Views\RegisterView.xaml
 Views\RequestDetailsView.xaml
 Views\SearchRequestsView.xaml

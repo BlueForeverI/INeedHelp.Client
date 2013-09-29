@@ -59,6 +59,10 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
             {
                 xamlType = GetXamlTypeByName(type.FullName);
             }
+            if(xamlType == null)
+            {
+                xamlType = CheckOtherMetadataProvidersForType(type);
+            }
             return xamlType;
         }
 
@@ -74,6 +78,10 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 return xamlType;
             }
             xamlType = CreateXamlType(typeName);
+            if (xamlType == null)
+            {
+                xamlType = CheckOtherMetadataProvidersForName(typeName);
+            }
             if (xamlType != null)
             {
                 _xamlTypes.Add(typeName, xamlType);
@@ -138,17 +146,19 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
         private object Activate_15_MyRequestsView() { return new global::INeedHelp.Client.Views.MyRequestsView(); }
 
-        private object Activate_16_RegisterViewModel() { return new global::INeedHelp.Client.ViewModels.RegisterViewModel(); }
+        private object Activate_16_ProfileSettingsView() { return new global::INeedHelp.Client.Views.ProfileSettingsView(); }
 
-        private object Activate_17_RegisterView() { return new global::INeedHelp.Client.Views.RegisterView(); }
+        private object Activate_17_RegisterViewModel() { return new global::INeedHelp.Client.ViewModels.RegisterViewModel(); }
 
-        private object Activate_18_RequestDetailsViewModel() { return new global::INeedHelp.Client.ViewModels.RequestDetailsViewModel(); }
+        private object Activate_18_RegisterView() { return new global::INeedHelp.Client.Views.RegisterView(); }
 
-        private object Activate_19_RequestDetailsView() { return new global::INeedHelp.Client.Views.RequestDetailsView(); }
+        private object Activate_19_RequestDetailsViewModel() { return new global::INeedHelp.Client.ViewModels.RequestDetailsViewModel(); }
 
-        private object Activate_20_SearchRequestsViewModel() { return new global::INeedHelp.Client.ViewModels.SearchRequestsViewModel(); }
+        private object Activate_20_RequestDetailsView() { return new global::INeedHelp.Client.Views.RequestDetailsView(); }
 
-        private object Activate_21_SearchRequestsView() { return new global::INeedHelp.Client.Views.SearchRequestsView(); }
+        private object Activate_21_SearchRequestsViewModel() { return new global::INeedHelp.Client.ViewModels.SearchRequestsViewModel(); }
+
+        private object Activate_22_SearchRequestsView() { return new global::INeedHelp.Client.Views.SearchRequestsView(); }
 
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
@@ -331,9 +341,15 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+            case "INeedHelp.Client.Views.ProfileSettingsView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.ProfileSettingsView), GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_16_ProfileSettingsView;
+                xamlType = userType;
+                break;
+
             case "INeedHelp.Client.ViewModels.RegisterViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.RegisterViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_16_RegisterViewModel;
+                userType.Activator = Activate_17_RegisterViewModel;
                 userType.AddMemberName("Username");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
                                                    "String");
@@ -354,13 +370,13 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             case "INeedHelp.Client.Views.RegisterView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.RegisterView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_17_RegisterView;
+                userType.Activator = Activate_18_RegisterView;
                 xamlType = userType;
                 break;
 
             case "INeedHelp.Client.ViewModels.RequestDetailsViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.RequestDetailsViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_18_RequestDetailsViewModel;
+                userType.Activator = Activate_19_RequestDetailsViewModel;
                 userType.AddMemberName("Request");
                 userType.AddMemberName("CommentText");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
@@ -379,13 +395,13 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             case "INeedHelp.Client.Views.RequestDetailsView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.RequestDetailsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_19_RequestDetailsView;
+                userType.Activator = Activate_20_RequestDetailsView;
                 xamlType = userType;
                 break;
 
             case "INeedHelp.Client.ViewModels.SearchRequestsViewModel":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.SearchRequestsViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
-                userType.Activator = Activate_20_SearchRequestsViewModel;
+                userType.Activator = Activate_21_SearchRequestsViewModel;
                 userType.AddMemberName("QueryText");
                 AddToMapOfTypeToStandardName(typeof(global::System.String),
                                                    "String");
@@ -398,7 +414,7 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
             case "INeedHelp.Client.Views.SearchRequestsView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.SearchRequestsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
-                userType.Activator = Activate_21_SearchRequestsView;
+                userType.Activator = Activate_22_SearchRequestsView;
                 xamlType = userType;
                 break;
 
@@ -406,6 +422,49 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Callisto.Callisto_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                }
+                return _otherProviders;
+            }
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    return xamlType;
+                }
+            }
+            return null;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    return xamlType;
+                }
+            }
+            return null;
+        }
 
         private object get_0_AddRequestViewModel_Text(object instance)
         {

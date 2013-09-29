@@ -34,5 +34,20 @@ namespace INeedHelp.Client.Data
 
             await HttpRequester.Get(baseUrl + "logout", headers);
         }
+
+        public static async Task Edit(UserEditModel user, string sessionKey)
+        {
+            var headers = new Dictionary<string, string>();
+            headers.Add("X-sessionKey", sessionKey);
+
+            await HttpRequester.Post(baseUrl + "edit", user, headers);
+        }
+
+        public static async Task<UserModel> GetUserBySessionKey(string sessionKey)
+        {
+            var headers = new Dictionary<string, string>();
+            headers.Add("X-sessionKey", sessionKey);
+            return await HttpRequester.Get<UserModel>(baseUrl + "session", headers);
+        }
     }
 }
