@@ -11,4 +11,5 @@ Views\LoginView.xaml
 Views\MyRequestsView.xaml
 Views\RegisterView.xaml
 Views\RequestDetailsView.xaml
+Views\SearchRequestsView.xaml
 Common\ReadMe.txt

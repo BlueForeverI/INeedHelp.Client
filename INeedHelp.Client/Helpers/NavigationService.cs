@@ -30,6 +30,8 @@ namespace ParseStarterProject.Services
                     return typeof(MyRequestsView);
                 case ViewType.EditRequest:
                     return typeof(EditRequestView);
+                case ViewType.SearchRequests:
+                    return typeof(SearchRequestsView);
             }
 
             return null;

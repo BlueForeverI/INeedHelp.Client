@@ -146,6 +146,10 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
 
         private object Activate_19_RequestDetailsView() { return new global::INeedHelp.Client.Views.RequestDetailsView(); }
 
+        private object Activate_20_SearchRequestsViewModel() { return new global::INeedHelp.Client.ViewModels.SearchRequestsViewModel(); }
+
+        private object Activate_21_SearchRequestsView() { return new global::INeedHelp.Client.Views.SearchRequestsView(); }
+
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
         {
@@ -376,6 +380,25 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
             case "INeedHelp.Client.Views.RequestDetailsView":
                 userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.RequestDetailsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
                 userType.Activator = Activate_19_RequestDetailsView;
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.ViewModels.SearchRequestsViewModel":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.ViewModels.SearchRequestsViewModel), GetXamlTypeByName("INeedHelp.Client.ViewModels.BaseViewModel"));
+                userType.Activator = Activate_20_SearchRequestsViewModel;
+                userType.AddMemberName("QueryText");
+                AddToMapOfTypeToStandardName(typeof(global::System.String),
+                                                   "String");
+                userType.AddMemberName("HelpRequests");
+                AddToMapOfTypeToStandardName(typeof(global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>),
+                                                   "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                userType.AddMemberName("SearchLoaded");
+                xamlType = userType;
+                break;
+
+            case "INeedHelp.Client.Views.SearchRequestsView":
+                userType = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::INeedHelp.Client.Views.SearchRequestsView), GetXamlTypeByName("INeedHelp.Client.Common.LayoutAwarePage"));
+                userType.Activator = Activate_21_SearchRequestsView;
                 xamlType = userType;
                 break;
 
@@ -684,6 +707,31 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
             var that = (global::INeedHelp.Client.ViewModels.RequestDetailsViewModel)instance;
             return that.ViewOnMap;
         }
+        private object get_42_SearchRequestsViewModel_QueryText(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.SearchRequestsViewModel)instance;
+            return that.QueryText;
+        }
+        private void set_42_SearchRequestsViewModel_QueryText(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.SearchRequestsViewModel)instance;
+            that.QueryText = (global::System.String)Value;
+        }
+        private object get_43_SearchRequestsViewModel_HelpRequests(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.SearchRequestsViewModel)instance;
+            return that.HelpRequests;
+        }
+        private void set_43_SearchRequestsViewModel_HelpRequests(object instance, object Value)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.SearchRequestsViewModel)instance;
+            that.HelpRequests = (global::System.Collections.Generic.IEnumerable<global::INeedHelp.Client.Models.HelpRequestModel>)Value;
+        }
+        private object get_44_SearchRequestsViewModel_SearchLoaded(object instance)
+        {
+            var that = (global::INeedHelp.Client.ViewModels.SearchRequestsViewModel)instance;
+            return that.SearchLoaded;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -942,6 +990,24 @@ namespace INeedHelp.Client.INeedHelp_Client_XamlTypeInfo
                 userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.RequestDetailsViewModel");
                 xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "ViewOnMap", "System.Windows.Input.ICommand");
                 xamlMember.Getter = get_41_RequestDetailsViewModel_ViewOnMap;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "INeedHelp.Client.ViewModels.SearchRequestsViewModel.QueryText":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.SearchRequestsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "QueryText", "String");
+                xamlMember.Getter = get_42_SearchRequestsViewModel_QueryText;
+                xamlMember.Setter = set_42_SearchRequestsViewModel_QueryText;
+                break;
+            case "INeedHelp.Client.ViewModels.SearchRequestsViewModel.HelpRequests":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.SearchRequestsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "HelpRequests", "System.Collections.Generic.IEnumerable<INeedHelp.Client.Models.HelpRequestModel>");
+                xamlMember.Getter = get_43_SearchRequestsViewModel_HelpRequests;
+                xamlMember.Setter = set_43_SearchRequestsViewModel_HelpRequests;
+                break;
+            case "INeedHelp.Client.ViewModels.SearchRequestsViewModel.SearchLoaded":
+                userType = (global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("INeedHelp.Client.ViewModels.SearchRequestsViewModel");
+                xamlMember = new global::INeedHelp.Client.INeedHelp_Client_XamlTypeInfo.XamlMember(this, "SearchLoaded", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_44_SearchRequestsViewModel_SearchLoaded;
                 xamlMember.SetIsReadOnly();
                 break;
             }

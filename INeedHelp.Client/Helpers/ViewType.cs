@@ -8,6 +8,7 @@
         AddRequest,
         RequestDetails,
         MyRequests,
-        EditRequest
+        EditRequest,
+        SearchRequests
     }
 }

@@ -74,5 +74,13 @@ namespace INeedHelp.Client.Data
             string url = baseUrl + "near/" + maxDistance.ToString();
             return await HttpRequester.Post<IEnumerable<HelpRequestModel>>(url, coordinates, headers);
         }
+
+        public static async Task<IEnumerable<HelpRequestModel>> SearchRequests(
+            string queryText, string sessionKey)
+        {
+            headers[sessionHeaderName] = sessionKey;
+            var query = new QueryModel() {Text = queryText};
+            return await HttpRequester.Post<IEnumerable<HelpRequestModel>>(baseUrl + "search", query, headers);
+        }
     }
 }

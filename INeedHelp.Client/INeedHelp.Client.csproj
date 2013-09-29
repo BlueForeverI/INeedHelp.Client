@@ -128,6 +128,7 @@
     <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\CoordinatesModel.cs" />
     <Compile Include="Models\HelpRequestModel.cs" />
+    <Compile Include="Models\QueryModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddRequestViewModel.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="ViewModels\MyRequestsViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\RequestDetailsViewModel.cs" />
+    <Compile Include="ViewModels\SearchRequestsViewModel.cs" />
     <Compile Include="Views\AddRequestView.xaml.cs">
       <DependentUpon>AddRequestView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +160,9 @@
     </Compile>
     <Compile Include="Views\RequestDetailsView.xaml.cs">
       <DependentUpon>RequestDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchRequestsView.xaml.cs">
+      <DependentUpon>SearchRequestsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RequestDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchRequestsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
