@@ -23,13 +23,16 @@ namespace INeedHelp.Client.ViewModels
 
         public ProfileSettingsViewModel()
         {
-            FirstName = AccountManager.CurrentUser.FirstName;
-            LastName = AccountManager.CurrentUser.LastName;
-            ProfilePictureUrl = AccountManager.CurrentUser.ProfilePictureUrl;
+            if (AccountManager.CurrentUser != null)
+            {
+                FirstName = AccountManager.CurrentUser.FirstName;
+                LastName = AccountManager.CurrentUser.LastName;
+                ProfilePictureUrl = AccountManager.CurrentUser.ProfilePictureUrl;
 
-            OnPropertyChanged("FirstName");
-            OnPropertyChanged("LastName");
-            OnPropertyChanged("ProfilePictureUrl");
+                OnPropertyChanged("FirstName");
+                OnPropertyChanged("LastName");
+                OnPropertyChanged("ProfilePictureUrl");
+            }
         }
 
         public event EventHandler PictureReceived;
