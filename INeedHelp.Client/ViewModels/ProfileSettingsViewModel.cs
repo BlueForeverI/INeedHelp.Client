@@ -25,14 +25,19 @@ namespace INeedHelp.Client.ViewModels
         {
             if (AccountManager.CurrentUser != null)
             {
-                FirstName = AccountManager.CurrentUser.FirstName;
-                LastName = AccountManager.CurrentUser.LastName;
-                ProfilePictureUrl = AccountManager.CurrentUser.ProfilePictureUrl;
-
-                OnPropertyChanged("FirstName");
-                OnPropertyChanged("LastName");
-                OnPropertyChanged("ProfilePictureUrl");
+                LoadProperties();
             }
+        }
+
+        public void LoadProperties()
+        {
+            FirstName = AccountManager.CurrentUser.FirstName;
+            LastName = AccountManager.CurrentUser.LastName;
+            ProfilePictureUrl = AccountManager.CurrentUser.ProfilePictureUrl;
+
+            OnPropertyChanged("FirstName");
+            OnPropertyChanged("LastName");
+            OnPropertyChanged("ProfilePictureUrl");
         }
 
         public event EventHandler PictureReceived;

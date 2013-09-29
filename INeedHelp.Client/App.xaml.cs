@@ -59,6 +59,7 @@ namespace INeedHelp.Client
             var settings = new SettingsFlyout();
             settings.Content = settingsView;
             settingsView.DataContext = settingsViewModel;
+            settingsViewModel.LoadProperties();
             settingsViewModel.PictureReceived += (sender, args) => { HandleProfileSettingsCommandRequest(command);};
             settings.HeaderText = "Profile Settings";
             settings.IsOpen = true;
