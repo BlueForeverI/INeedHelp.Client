@@ -9,6 +9,7 @@ using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Media.Capture;
 using Windows.Storage.Pickers;
@@ -103,16 +104,35 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleAddRequest(object obj)
         {
-            var request = new HelpRequestModel()
-                              {
-                                  Title = Title,
-                                  Text = Text,
-                                  PictureUrl = PictureUrl
-                              };
+            try
+            {
+                var geolocator = new Geolocator();
+                geolocator.DesiredAccuracy = PositionAccuracy.High;
+         
+                var position = await geolocator.GetGeopositionAsync();
+                var coordinates = new CoordinatesModel()
+                                      {
+                                          Latitude = position.Coordinate.Latitude,
+                                          Longitude = position.Coordinate.Longitude
+                                      };
 
-            await HelpRequestsPersister.AddRequest(request, AccountManager.CurrentUser.SessionKey);
-            NavigationService.Navigate(ViewType.MyRequests);
-            NotificationsManager.ShowNotification("Request added");
+                var request = new HelpRequestModel()
+                                  {
+                                      Title = Title,
+                                      Text = Text,
+                                      PictureUrl = PictureUrl,
+                                      Coordinates = coordinates
+                                  };
+
+                await HelpRequestsPersister.AddRequest(request, AccountManager.CurrentUser.SessionKey);
+                NavigationService.Navigate(ViewType.MyRequests);
+                NotificationsManager.ShowNotification("Request added");
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = "Unable to get location";
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
+using Windows.Devices.Geolocation;
 using Windows.Security.Credentials;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -19,6 +20,7 @@ namespace INeedHelp.Client.ViewModels
     {
         public string Username { get; set; }
         public string UserPictureUrl { get; set; }
+        public string MaxDistance { get; set; }
 
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
 
@@ -107,6 +109,58 @@ namespace INeedHelp.Client.ViewModels
                 }
 
                 return this.goToMyRequests;
+            }
+        }
+
+        private ICommand filterRequests;
+        public ICommand FilterRequests
+        {
+            get
+            {
+                if(this.filterRequests == null)
+                {
+                    this.filterRequests = new RelayCommand(HandleFilterRequests);
+                }
+
+                return this.filterRequests;
+            }
+        }
+
+        private async void HandleFilterRequests(object obj)
+        {
+            if(string.IsNullOrEmpty(MaxDistance))
+            {
+                return;
+            }
+
+            int maxDistance;
+            if(!int.TryParse(MaxDistance, out maxDistance))
+            {
+                ErrorMessage = "Invalid distance";
+                return;
+            }
+
+            ErrorMessage = "";
+
+            try
+            {
+                var geolocator = new Geolocator();
+                geolocator.DesiredAccuracy = PositionAccuracy.High;
+         
+                var position = await geolocator.GetGeopositionAsync();
+                var coordinates = new CoordinatesModel()
+                                      {
+                                          Latitude = position.Coordinate.Latitude,
+                                          Longitude = position.Coordinate.Longitude
+                                      };
+
+                HelpRequests = await HelpRequestsPersister.GetNearRequests(
+                    coordinates, maxDistance, AccountManager.CurrentUser.SessionKey);
+                OnPropertyChanged("HelpRequests");
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = "Unable to get current location";
             }
         }
 

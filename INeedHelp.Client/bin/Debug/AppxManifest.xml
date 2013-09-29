@@ -31,6 +31,7 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v4.5" />

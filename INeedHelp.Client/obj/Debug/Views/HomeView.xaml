@@ -47,6 +47,12 @@
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
                 <Button Command="{Binding GoToMyRequests}">My Requests</Button>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Show requests within " />
+                <TextBox Text="{Binding MaxDistance, Mode=TwoWay}" Width="50" />
+                <TextBlock Text=" kilometers" />
+                <Button Command="{Binding FilterRequests}">Filter Requests</Button>
+            </StackPanel>
             <ListBox x:ConnectionId='2' ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"
                      SelectionMode="Single" 
                                                                     >

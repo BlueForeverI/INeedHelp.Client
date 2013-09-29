@@ -8,6 +8,7 @@ using INeedHelp.Client.Commands;
 using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
+using Windows.System;
 
 namespace INeedHelp.Client.ViewModels
 {
@@ -56,6 +57,34 @@ namespace INeedHelp.Client.ViewModels
                 }
 
                 return this.addComment;
+            }
+        }
+
+        private ICommand viewOnMap;
+        public ICommand ViewOnMap
+        {
+            get
+            {
+                if(this.viewOnMap == null)
+                {
+                    this.viewOnMap = new RelayCommand(HandleViewOnMap);
+                }
+
+                return this.viewOnMap;
+            }
+        }
+
+        private async void HandleViewOnMap(object obj)
+        {
+            if (Request.Coordinates != null)
+            {
+                var uriString = string.Format("bingmaps:?cp={0}~{1}",
+                                              Request.Coordinates.Latitude, Request.Coordinates.Longitude);
+                await Launcher.LaunchUriAsync(new Uri(uriString));
+            }
+            else
+            {
+                ErrorMessage = "The request has no coordinates";
             }
         }
 

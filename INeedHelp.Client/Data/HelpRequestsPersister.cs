@@ -66,5 +66,13 @@ namespace INeedHelp.Client.Data
             headers[sessionHeaderName] = sessionKey;
             await HttpRequester.Post(baseUrl + "edit", request, headers);
         }
+
+        public static async Task<IEnumerable<HelpRequestModel>> GetNearRequests(
+            CoordinatesModel coordinates, int maxDistance, string sessionKey)
+        {
+            headers[sessionHeaderName] = sessionKey;
+            string url = baseUrl + "near/" + maxDistance.ToString();
+            return await HttpRequester.Post<IEnumerable<HelpRequestModel>>(url, coordinates, headers);
+        }
     }
 }
