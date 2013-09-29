@@ -10,6 +10,7 @@ using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
+using Windows.Storage.Pickers;
 
 namespace INeedHelp.Client.ViewModels
 {
@@ -57,6 +58,35 @@ namespace INeedHelp.Client.ViewModels
                 }
 
                 return this.saveChanges;
+            }
+        }
+
+        private ICommand exportRequest;
+        public ICommand ExportRequest
+        {
+            get
+            {
+                if(this.exportRequest == null)
+                {
+                    this.exportRequest = new RelayCommand(HandleExportRequest);
+                }
+
+                return this.exportRequest;
+            }
+        }
+
+        private async void HandleExportRequest(object obj)
+        {
+            FileSavePicker picker = new FileSavePicker();
+            picker.FileTypeChoices.Add("HTML Page", new List<string>(){".html"});
+            picker.SuggestedFileName = Request.Title + ".html";
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            var file = await picker.PickSaveFileAsync();
+
+            if(file != null)
+            {
+                await RequestExporter.ExportToHtml(Request, file);
+                NotificationsManager.ShowNotification("Request exported successfully");
             }
         }
 

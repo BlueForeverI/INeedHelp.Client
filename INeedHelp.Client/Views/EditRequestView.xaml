@@ -44,6 +44,7 @@
                          TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
                 <CheckBox IsChecked="{Binding Path=Request.Solved, Mode=TwoWay}">Solved</CheckBox>
                 <Button Command="{Binding SaveChanges}">SAVE CHANGES</Button>
+                <Button Command="{Binding ExportRequest}">EXPORT REQUEST</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>
             <StackPanel>
