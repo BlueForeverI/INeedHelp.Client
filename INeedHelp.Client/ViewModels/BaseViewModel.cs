@@ -4,6 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using INeedHelp.Client.Commands;
+using INeedHelp.Client.Helpers;
+using ParseStarterProject.Services;
 
 namespace INeedHelp.Client.ViewModels
 {
@@ -30,6 +34,64 @@ namespace INeedHelp.Client.ViewModels
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private ICommand logout;
+        public ICommand Logout
+        {
+            get
+            {
+                if (this.logout == null)
+                {
+                    this.logout = new RelayCommand(HandleLogout);
+                }
+
+                return this.logout;
+            }
+        }
+
+        private ICommand goToAddRequest;
+        public ICommand GoToAddRequest
+        {
+            get
+            {
+                if (this.goToAddRequest == null)
+                {
+                    this.goToAddRequest = new RelayCommand(HandleGoToAddRequest);
+                }
+
+                return this.goToAddRequest;
+            }
+        }
+
+        private ICommand goToMyRequests;
+        public ICommand GoToMyRequests
+        {
+            get
+            {
+                if (this.goToMyRequests == null)
+                {
+                    this.goToMyRequests = new RelayCommand(HandleGoToMyRequests);
+                }
+
+                return this.goToMyRequests;
+            }
+        }
+
+        private void HandleGoToMyRequests(object obj)
+        {
+            NavigationService.Navigate(ViewType.MyRequests);
+        }
+
+        private void HandleGoToAddRequest(object obj)
+        {
+            NavigationService.Navigate(ViewType.AddRequest);
+        }
+
+        private async void HandleLogout(object obj)
+        {
+            await AccountManager.ClearCurrentUser();
+            NavigationService.Navigate(ViewType.Login);
         }
     }
 }

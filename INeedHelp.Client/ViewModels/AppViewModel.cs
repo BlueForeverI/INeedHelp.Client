@@ -41,6 +41,9 @@ namespace INeedHelp.Client.ViewModels
                 OnPropertyChanged("Username");
                 OnPropertyChanged("UserPictureUrl");
 
+                RequestsLoading = true;
+                OnPropertyChanged("RequestsLoading");
+                OnPropertyChanged("RequestsVisible");
                 GetRequests();
             }
             else
@@ -53,6 +56,12 @@ namespace INeedHelp.Client.ViewModels
         {
             HelpRequests = await HelpRequestsPersister.GetAllRequests(
                 AccountManager.CurrentUser.SessionKey);
+
+
+            RequestsLoading = false;
+            OnPropertyChanged("RequestsLoading");
+            OnPropertyChanged("RequestsVisible");
+
             OnPropertyChanged("HelpRequests");
         }
 
@@ -70,48 +79,6 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-        private ICommand logout;
-        public ICommand Logout
-        {
-            get
-            {
-                if(this.logout == null)
-                {
-                    this.logout = new RelayCommand(HandleLogout);
-                }
-
-                return this.logout;
-            }
-        }
-
-        private ICommand goToAddRequest;
-        public ICommand GoToAddRequest
-        {
-            get
-            {
-                if(this.goToAddRequest == null)
-                {
-                    this.goToAddRequest = new RelayCommand(HandleGoToAddRequest);
-                }
-
-                return this.goToAddRequest;
-            }
-        }
-
-        private ICommand goToMyRequests;
-        public ICommand GoToMyRequests
-        {
-            get
-            {
-                if(this.goToMyRequests == null)
-                {
-                    this.goToMyRequests = new RelayCommand(HandleGoToMyRequests);
-                }
-
-                return this.goToMyRequests;
-            }
-        }
-
         private ICommand filterRequests;
         public ICommand FilterRequests
         {
@@ -125,6 +92,9 @@ namespace INeedHelp.Client.ViewModels
                 return this.filterRequests;
             }
         }
+
+        public bool RequestsLoading { get; set; }
+        public bool RequestsVisible { get { return !RequestsLoading; } }
 
         private async void HandleFilterRequests(object obj)
         {
@@ -164,21 +134,7 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-        private void HandleGoToMyRequests(object obj)
-        {
-            NavigationService.Navigate(ViewType.MyRequests);
-        }
-
-        private void HandleGoToAddRequest(object obj)
-        {
-            NavigationService.Navigate(ViewType.AddRequest);
-        }
-
-        private async void HandleLogout(object obj)
-        {
-            await AccountManager.ClearCurrentUser();
-            NavigationService.Navigate(ViewType.Login);
-        }
+        
 
         private void HandleHomeViewLoaded(object obj)
         {

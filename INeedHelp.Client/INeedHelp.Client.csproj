@@ -112,8 +112,11 @@
     <Compile Include="Common\BooleanNegationConverter.cs" />
     <Compile Include="Common\BooleanToVisibilityConverter.cs" />
     <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\OrientedSize.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Common\UniformGrid.cs" />
+    <Compile Include="Common\WrapPanel.cs" />
     <Compile Include="Data\HelpRequestsPersister.cs" />
     <Compile Include="Data\HttpRequester.cs" />
     <Compile Include="Data\UsersPersister.cs" />
