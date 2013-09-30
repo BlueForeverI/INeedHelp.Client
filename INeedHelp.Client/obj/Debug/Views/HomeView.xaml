@@ -67,7 +67,7 @@
                          Margin="10 0 10 0"/>
                 <TextBlock Text="kilometers" />
                 <Button Command="{Binding FilterRequests}"
-                        FontSize="20" VerticalAlignment="Top">Filter Requests</Button>
+                        FontSize="20" VerticalAlignment="Top" Margin="10 0 0 0">Filter Requests</Button>
             </StackPanel>
             <ProgressBar IsIndeterminate="True" 
                          Visibility="{Binding Path=RequestsLoading, Converter={StaticResource boolToVisibilityConverter}}"/>

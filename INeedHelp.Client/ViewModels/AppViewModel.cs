@@ -18,8 +18,6 @@ namespace INeedHelp.Client.ViewModels
 {
     public class AppViewModel : BaseViewModel
     {
-        public string Username { get; set; }
-        public string UserPictureUrl { get; set; }
         public string MaxDistance { get; set; }
 
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
@@ -35,9 +33,6 @@ namespace INeedHelp.Client.ViewModels
 
             if (loggedUser != null)
             {
-                Username = loggedUser.Username;
-                UserPictureUrl = loggedUser.ProfilePictureUrl;
-
                 OnPropertyChanged("Username");
                 OnPropertyChanged("UserPictureUrl");
 
@@ -54,15 +49,23 @@ namespace INeedHelp.Client.ViewModels
 
         private async void GetRequests()
         {
-            HelpRequests = await HelpRequestsPersister.GetAllRequests(
-                AccountManager.CurrentUser.SessionKey);
+            try
+            {
+
+                HelpRequests = await HelpRequestsPersister.GetAllRequests(
+                    AccountManager.CurrentUser.SessionKey);
 
 
-            RequestsLoading = false;
-            OnPropertyChanged("RequestsLoading");
-            OnPropertyChanged("RequestsVisible");
+                RequestsLoading = false;
+                OnPropertyChanged("RequestsLoading");
+                OnPropertyChanged("RequestsVisible");
 
-            OnPropertyChanged("HelpRequests");
+                OnPropertyChanged("HelpRequests");
+            }
+            catch (Exception)
+            {
+                NotificationsManager.ShowNotification("Error while getting help requests.\nCheck your internet connection");
+            }
         }
 
         private ICommand homeViewLoaded;

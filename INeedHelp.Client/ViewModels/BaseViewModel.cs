@@ -13,6 +13,16 @@ namespace INeedHelp.Client.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public string Username
+        {
+            get { return (AccountManager.CurrentUser != null) ? AccountManager.CurrentUser.Username : ""; }
+        }
+
+        public string UserPictureUrl
+        {
+            get { return (AccountManager.CurrentUser != null) ? AccountManager.CurrentUser.ProfilePictureUrl : ""; }
+        }
+
         private string successMessage;
         private string errorMessage;
 
@@ -76,6 +86,25 @@ namespace INeedHelp.Client.ViewModels
 
                 return this.goToMyRequests;
             }
+        }
+
+        private ICommand goToHome;
+        public ICommand GoToHome
+        {
+            get
+            {
+                if (this.goToHome == null)
+                {
+                    this.goToHome = new RelayCommand(HandleGoToHome);
+                }
+
+                return this.goToHome;
+            }
+        }
+
+        private void HandleGoToHome(object obj)
+        {
+            NavigationService.Navigate(ViewType.Home);
         }
 
         private void HandleGoToMyRequests(object obj)

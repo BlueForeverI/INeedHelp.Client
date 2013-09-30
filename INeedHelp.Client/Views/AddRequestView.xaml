@@ -12,6 +12,18 @@
     <Page.DataContext>
         <ViewModels:AddRequestViewModel />
     </Page.DataContext>
+
+
+    <Page.BottomAppBar>
+        <AppBar VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Button Command="{Binding Logout}">Logout</Button>
+                <Button Command="{Binding GoToHome}">Home</Button>
+                <Button Command="{Binding GoToAddRequest}">Add Request</Button>
+                <Button Command="{Binding GoToMyRequests}">My Requests</Button>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -28,26 +40,45 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="ADD HELP REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="MY HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
+                        Margin="0 30 20 0">
+                <Image Width="50" Height="50" 
+                       Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
+                <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
+            </StackPanel>
         </Grid>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="120 0 0 0">
             <StackPanel HorizontalAlignment="Left">
                 <TextBlock Text="TITLE" />
-                <TextBox Text="{Binding Title, Mode=TwoWay}" Width="300" />
-                <TextBlock Text="TEXT" />
+                <TextBox Text="{Binding Title, Mode=TwoWay}" Width="300" Height="40" 
+                         FontSize="20"/>
+                <TextBlock Text="TEXT" Margin="0 15 0 0"/>
                 <TextBox Text="{Binding Text, Mode=TwoWay}" Width="300" FontSize="20"
-                     TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
-                <Button Command="{Binding AddRequest}">SUBMIT</Button>
+                     TextWrapping="Wrap" AcceptsReturn="True" Height="320"/>
+                <Button Command="{Binding AddRequest}" HorizontalAlignment="Stretch"
+                        Margin="0 15 0 0" >SUBMIT</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>
-            <StackPanel>
+            <StackPanel Margin="20 0 0 0">
                 <TextBlock>REQUEST PICTURE</TextBlock>
-                <Image Source="{Binding PictureUrl}" Width="350" Height="350" Stretch="Fill"/>
-                <Button Command="{Binding GetPictureFromCamera}">FROM CAMERA</Button>
-                <Button Command="{Binding GetPictureFromFile}">FROM FILE</Button>
+                <Image Source="{Binding PictureUrl}" Width="500" Height="410" Stretch="Fill"
+                       HorizontalAlignment="Left"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding GetPictureFromCamera}" Margin="0 15 0 0"
+                            HorizontalAlignment="Stretch" Grid.Column="0">FROM CAMERA</Button>
+                    <Button Command="{Binding GetPictureFromFile}" Margin="0 15 0 0"
+                            HorizontalAlignment="Stretch" Grid.Column="1">FROM FILE</Button>
+                </Grid>
             </StackPanel>
         </StackPanel>
 

@@ -13,15 +13,29 @@ namespace INeedHelp.Client.ViewModels
     {
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; }
 
+        public bool RequestsLoading { get; set; }
+        public bool RequestsVisible { get { return !RequestsLoading; } }
+
         public MyRequestsViewModel()
         {
-            LoadHelpRequests();
+            try
+            {
+                OnPropertyChanged("RequestsLoading");
+                OnPropertyChanged("RequestsVisible");
+                LoadHelpRequests();
+            }
+            catch (Exception)
+            {
+                // handle exception here
+            }
         }
 
         private async void LoadHelpRequests()
         {
             this.HelpRequests = await HelpRequestsPersister.GetRequestsByUser(AccountManager.CurrentUser.SessionKey);
             OnPropertyChanged("HelpRequests");
+            OnPropertyChanged("RequestsLoading");
+            OnPropertyChanged("RequestsVisible");
         }
     }
 }
