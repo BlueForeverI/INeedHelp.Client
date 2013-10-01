@@ -51,7 +51,7 @@
         </Grid>
 
         <StackPanel Grid.Row="1" Margin="120 0 0 0">
-            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" HorizontalScrollMode="Enabled"
+            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Enabled"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           >
                 <ListBox ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"

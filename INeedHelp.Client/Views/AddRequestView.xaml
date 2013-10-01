@@ -43,7 +43,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="MY HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="ADD REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
                         Margin="0 30 20 0">

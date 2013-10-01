@@ -29,7 +29,6 @@
                 <Button Command="{Binding Logout}">Logout</Button>
                 <Button Command="{Binding GoToHome}">Home</Button>
                 <Button Command="{Binding GoToAddRequest}">Add Request</Button>
-                <Button Command="{Binding GoToMyRequests}">My Requests</Button>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
@@ -61,7 +60,7 @@
         <StackPanel Grid.Row="1" Margin="120 0 0 0">
             <ProgressBar IsIndeterminate="True" 
                          Visibility="{Binding Path=RequestsLoading, Converter={StaticResource boolToVisibilityConverter}}"/>
-            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" HorizontalScrollMode="Enabled"
+            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Enabled"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           >
                 <ListBox ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"

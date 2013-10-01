@@ -47,8 +47,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"
+                       Padding="120 0 0 0"/>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
                         Margin="0 30 20 0">
@@ -67,11 +67,11 @@
                          Margin="10 0 10 0"/>
                 <TextBlock Text="kilometers" />
                 <Button Command="{Binding FilterRequests}"
-                        FontSize="20" VerticalAlignment="Top" Margin="10 0 0 0">Filter Requests</Button>
+                        FontSize="20" VerticalAlignment="Top" Margin="10 0 0 0">FILTER REQUESTS</Button>
             </StackPanel>
             <ProgressBar IsIndeterminate="True" 
                          Visibility="{Binding Path=RequestsLoading, Converter={StaticResource boolToVisibilityConverter}}"/>
-            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" HorizontalScrollMode="Enabled"
+            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Enabled"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           >
                 <ListBox x:ConnectionId='2' ItemsSource="{Binding HelpRequests}" x:Name="ListBoxRequests"
