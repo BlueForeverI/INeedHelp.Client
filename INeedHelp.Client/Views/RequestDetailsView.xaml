@@ -34,17 +34,28 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUEST DETAILS" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Image Source="{Binding Path=Request.PictureUrl}" 
-                   Width="350" Height="350" Stretch="Fill" VerticalAlignment="Top"/>
-            <StackPanel HorizontalAlignment="Left">
+        <Grid Grid.Row="1" Margin="120 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
                 <TextBlock Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" />
+                <Image Source="{Binding Path=Request.PictureUrl}" 
+                   Width="350" Height="350" Stretch="Fill" VerticalAlignment="Top"/>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Left" Grid.Column="1">
                 <TextBlock Text="{Binding Path=Request.Text, Mode=TwoWay}" Width="300" FontSize="20"
                          TextWrapping="Wrap" Height="300"/>
                 <TextBlock Text="{Binding SuccessMessage}" />
                 <Button Command="{Binding ViewOnMap}">View On Map</Button>
             </StackPanel>
-            <StackPanel>
+            
+            <StackPanel Grid.Column="2">
                 <TextBlock>
                     <Run Text="{Binding CommentsCount}" />
                     <Run>Comments</Run>
@@ -66,7 +77,8 @@
                 <Button Command="{Binding AddComment}">ADD COMMENT</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>
-            <StackPanel>
+            
+            <StackPanel Grid.Column="3">
                 <TextBlock>
                     <Run Text="{Binding HelpersCount}" />
                     <Run>Helpers</Run>
@@ -79,7 +91,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
-        </StackPanel>
+        </Grid>
 
 
         <VisualStateManager.VisualStateGroups>
