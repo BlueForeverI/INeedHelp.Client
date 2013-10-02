@@ -14,6 +14,17 @@
         <ViewModels:EditRequestViewModel />
     </Page.DataContext>
 
+    <Page.BottomAppBar>
+        <AppBar VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Button Command="{Binding Logout}">Logout</Button>
+                <Button Command="{Binding GoToHome}">Home</Button>
+                <Button Command="{Binding GoToAddRequest}">Add Request</Button>
+                <Button Command="{Binding GoToMyRequests}">My Requests</Button>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+    
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -35,27 +46,46 @@
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="EDIT REQUEST" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <StackPanel HorizontalAlignment="Left">
+        <Grid Grid.Row="1" Margin="120 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <!--<StackPanel Orientation="Horizontal">-->
+            <StackPanel HorizontalAlignment="Left" Grid.Column="0">
                 <TextBlock Text="TITLE" />
-                <TextBox Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" />
-                <TextBlock Text="TEXT" />
+                <TextBox Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" 
+                         FontSize="20"/>
+                <TextBlock Text="TEXT" Margin="0 20 0 0"/>
                 <TextBox Text="{Binding Path=Request.Text, Mode=TwoWay}" Width="300" FontSize="20"
-                         TextWrapping="Wrap" AcceptsReturn="True" Height="300"/>
-                <CheckBox IsChecked="{Binding Path=Request.Solved, Mode=TwoWay}">Solved</CheckBox>
-                <Button Command="{Binding SaveChanges}">SAVE CHANGES</Button>
-                <Button Command="{Binding ExportRequest}">EXPORT REQUEST</Button>
+                         TextWrapping="Wrap" AcceptsReturn="True" Height="280"
+                         />
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <Viewbox Height="40">
+                    <CheckBox IsChecked="{Binding Path=Request.Solved, Mode=TwoWay}"
+                          >
+                        </CheckBox>
+                    </Viewbox>
+                    <TextBlock Text="SOLVED" FontSize="30" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <Button Command="{Binding SaveChanges}" HorizontalAlignment="Stretch"
+                        Margin="0 20 0 0">SAVE CHANGES</Button>
                 <TextBlock Text="{Binding SuccessMessage}" />
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="1" Margin="10 0 0 0">
                 <TextBlock>
                     <Run Text="{Binding CommentsCount}" />
-                    <Run>Comments</Run>
+                    <Run>COMMENTS</Run>
                 </TextBlock>
-                <ListBox ItemsSource="{Binding Path=Request.Comments}">
+                <ListBox ItemsSource="{Binding Path=Request.Comments}"
+                         Height="390" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock>
+                            <TextBlock TextWrapping="Wrap">
                             <Run Text="{Binding Path=User.Username}" />
                             <Run Text=":" />
                             <Run Text="{Binding Content}" />
@@ -63,35 +93,47 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+
+                <Button Command="{Binding ExportRequest}"
+                        HorizontalAlignment="Stretch"
+                        Margin="0 76 0 0">EXPORT REQUEST</Button>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Grid.Column="2" Margin="10 0 0 0">
                 <TextBlock>
                     <Run Text="{Binding HelpersCount}" />
-                    <Run>Helpers</Run>
+                    <Run>HELPERS</Run>
                 </TextBlock>
-                <ListBox ItemsSource="{Binding Path=Request.Helpers}">
+                <ListBox ItemsSource="{Binding Path=Request.Helpers}" Width="200"
+                         HorizontalAlignment="Left"
+                         Height="390" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Username}" />
+                            <TextBlock Text="{Binding Username}" TextWrapping="Wrap" 
+                                       FontSize="20" VerticalAlignment="Center"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
-            <StackPanel>
-                <TextBlock Text="Suggested Helpers" />
-                <ListBox ItemsSource="{Binding SuggestedHelpers}">
+            <StackPanel Grid.Column="3" Margin="10 0 0 0">
+                <TextBlock Text="SUGGESTED HELPERS" />
+                <ListBox ItemsSource="{Binding SuggestedHelpers}"
+                         Height="390" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Username}" />
+                                <TextBlock Text="{Binding Username}" TextWrapping="Wrap" FontSize="20"
+                                           VerticalAlignment="Center"/>
                                 <Button Command="{Binding Path=DataContext.AddHelper, ElementName=pageRoot}"
-                                        CommandParameter="{Binding Id}">Add</Button>
+                                        CommandParameter="{Binding Id}" FontSize="20"
+                                        VerticalAlignment="Center"
+                                        Background="Black" Foreground="White" BorderBrush="White">ADD</Button>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
-        </StackPanel>
+            <!--</StackPanel>-->
+        </Grid>
 
         <VisualStateManager.VisualStateGroups>
 

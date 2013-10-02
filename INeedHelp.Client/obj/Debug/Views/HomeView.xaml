@@ -47,8 +47,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="False" Style="{StaticResource BackButtonStyle}"/>
+
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="HELP REQUESTS" Style="{StaticResource PageHeaderTextStyle}"
-                       Padding="120 0 0 0"/>
+                       />
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
                         Margin="0 30 20 0">

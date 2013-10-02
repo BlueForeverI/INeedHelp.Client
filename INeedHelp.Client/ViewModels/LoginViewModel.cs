@@ -18,9 +18,12 @@ namespace INeedHelp.Client.ViewModels
     {
         public LoginViewModel()
         {
+            LoggingIn = false;
+            OnPropertyChanged("LoggingIn");
         }
 
         public string Username { get; set; }
+        public bool LoggingIn { get; set; }
 
         private ICommand login;
         public ICommand Login
@@ -57,6 +60,9 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleLogin(object obj)
         {
+            LoggingIn = true;
+            OnPropertyChanged("LoggingIn");
+
             var passwordBox = obj as PasswordBox;
             var passwordHash = Sha1Encrypter.ConvertToSha1(passwordBox.Password);
             var loggedUser = await UsersPersister.Login(Username, passwordHash);
@@ -70,6 +76,9 @@ namespace INeedHelp.Client.ViewModels
             else
             {
                 ErrorMessage = "Invalid username or password";
+
+                LoggingIn = false;
+                OnPropertyChanged("LoggingIn");
             }
         }
     }

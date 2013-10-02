@@ -26,10 +26,15 @@ namespace INeedHelp.Client.ViewModels
         public string LastName { get; set; }
         public string ProfilePictureUrl { get; set; }
 
+        public bool Registering { get; set; }
+
         public RegisterViewModel()
         {
             ProfilePictureUrl = "http://i.imgur.com/0E6rxzp.png";
             OnPropertyChanged("ProfilePictureUrl");
+
+            Registering = false;
+            OnPropertyChanged("Registering");
         }
 
         private ICommand register;
@@ -74,6 +79,7 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+
         private async void HandleGetPictureFromFile(object obj)
         {
             var openPicker = new FileOpenPicker();
@@ -86,9 +92,15 @@ namespace INeedHelp.Client.ViewModels
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
+                Registering = true;
+                OnPropertyChanged("Registering");
+
                 var url = await ImageUploader.UploadImage(file);
                 ProfilePictureUrl = url;
                 OnPropertyChanged("ProfilePictureUrl");
+
+                Registering = false;
+                OnPropertyChanged("Registering");
             }
         }
 
@@ -101,14 +113,23 @@ namespace INeedHelp.Client.ViewModels
 
             if (file != null)
             {
+                Registering = true;
+                OnPropertyChanged("Registering");
+
                 var url = await ImageUploader.UploadImage(file);
                 ProfilePictureUrl = url;
                 OnPropertyChanged("ProfilePictureUrl");
+
+                Registering = false;
+                OnPropertyChanged("Registering");
             }
         }
 
         private async void HandleRegister(object obj)
         {
+            Registering = true;
+            OnPropertyChanged("Registering");
+
             var passwordBox = obj as PasswordBox;
             var password = passwordBox.Password;
             var passwordHash = Sha1Encrypter.ConvertToSha1(password);
@@ -131,6 +152,8 @@ namespace INeedHelp.Client.ViewModels
             }
             else
             {
+                Registering = false;
+                OnPropertyChanged("Registering");
                 ErrorMessage = "Cannot register user";
             }
         }

@@ -13,6 +13,9 @@
         <ViewModels:LoginViewModel />
     </Page.DataContext>
 
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Page.Resources>
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -30,20 +33,24 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
+            <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="False" Style="{StaticResource BackButtonStyle}"/>
+
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="LOGIN" Style="{StaticResource PageHeaderTextStyle}"
-                       Padding="120 0 0 0"/>
+                       />
         </Grid>
 
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="1">
             <TextBlock Text="USERNAME" Margin="5"/>
-            <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5" Width="280"/>
-            <TextBlock Text="PASSWORD" Margin="5"/>
-            <PasswordBox x:Name="passwordBox" Margin="5" Width="280" />
+            <TextBox Text="{Binding Username, Mode=TwoWay}" Margin="5" Width="350"/>
+            <TextBlock Text="PASSWORD" Margin="5 20 5 5"/>
+            <PasswordBox x:Name="passwordBox" Margin="5" Width="350" />
             <Button Command="{Binding Login}" HorizontalAlignment="Stretch"
                     CommandParameter="{Binding ElementName=passwordBox}" 
-                    Margin="5">LOGIN</Button>
+                    Margin="5 20 5 5">LOGIN</Button>
+            <ProgressBar IsIndeterminate="True" 
+                         Visibility="{Binding Path=LoggingIn, Converter={StaticResource boolToVisibilityConverter}}" />
             <HyperlinkButton Command="{Binding GoToRegister}" 
                              HorizontalAlignment="Center"
                              FontSize="25" Margin="0 20 0 0">Register an account</HyperlinkButton>
