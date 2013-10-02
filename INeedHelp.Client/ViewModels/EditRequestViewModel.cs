@@ -10,6 +10,8 @@ using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
 using Windows.Storage.Pickers;
 
 namespace INeedHelp.Client.ViewModels
@@ -18,6 +20,11 @@ namespace INeedHelp.Client.ViewModels
     {
         public HelpRequestModel Request { get; set; }
         public int CommentsCount { get { return Request.Comments.Count(); } }
+
+        public EditRequestViewModel()
+        {
+            RegisterForShare();
+        }
 
         private ICommand editRequestLoaded;
         public ICommand EditRequestLoaded
@@ -62,6 +69,8 @@ namespace INeedHelp.Client.ViewModels
         }
 
         private ICommand exportRequest;
+        private TypedEventHandler<DataTransferManager, DataRequestedEventArgs> _handler;
+
         public ICommand ExportRequest
         {
             get
@@ -133,6 +142,24 @@ namespace INeedHelp.Client.ViewModels
             OnPropertyChanged("CommentsCount");
             OnPropertyChanged("HelpersCount");
             OnPropertyChanged("SuggestedHelpers");
+        }
+
+        private void RegisterForShare()
+        {
+            if (_handler != null)
+                DataTransferManager.GetForCurrentView().DataRequested -= _handler;
+
+
+            _handler = ShareTextHandler;
+            DataTransferManager.GetForCurrentView().DataRequested += _handler;
+        }
+
+        private void ShareTextHandler(DataTransferManager sender, DataRequestedEventArgs e)
+        {
+            DataRequest request = e.Request;
+            request.Data.Properties.Title = Request.Title;
+            request.Data.Properties.Description = "Help Request";
+            request.Data.SetText(Request.Text);
         }
     }
 }
