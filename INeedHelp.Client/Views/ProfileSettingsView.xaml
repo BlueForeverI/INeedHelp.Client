@@ -42,24 +42,29 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Left">
-            <StackPanel HorizontalAlignment="Left">
+            <StackPanel HorizontalAlignment="Left" Margin="-4 0 0 0">
                 <Image Source="{Binding ProfilePictureUrl}" Width="150" Height="150" Stretch="Fill"/>
-                <Button Command="{Binding GetPictureFromCamera}" Width="255">FROM CAMERA</Button>
-                <Button Command="{Binding GetPictureFromFile}" Width="255">FROM FILE</Button>
+                <Button Command="{Binding GetPictureFromCamera}" Width="258">FROM CAMERA</Button>
+                <Button Command="{Binding GetPictureFromFile}" Width="258">FROM FILE</Button>
             </StackPanel>
             <StackPanel x:Name="passwords" HorizontalAlignment="Left">
-                <TextBlock Text="OLD PASSWORD" HorizontalAlignment="Left"/>
-                <PasswordBox Margin="5"/>
-                <TextBlock Text="NEW PASSWORD"/>
-                <PasswordBox Margin="5"/>
+                <TextBlock Text="OLD PASSWORD" HorizontalAlignment="Left"
+                           Margin="0 10 0 0"/>
+                <PasswordBox />
+                <TextBlock Text="NEW PASSWORD"
+                           Margin="0 10 0 0"/>
+                <PasswordBox />
             </StackPanel>
-            <TextBlock Text="FIRST NAME" />
+            <TextBlock Text="FIRST NAME" 
+                       Margin="0 10 0 0"/>
             <TextBox Text="{Binding FirstName, Mode=TwoWay}" />
-            <TextBlock Text="LAST NAME"/>
+            <TextBlock Text="LAST NAME"
+                       Margin="0 10 0 0"/>
             <TextBox Text="{Binding LastName, Mode=TwoWay}" />
             <Button Command="{Binding SaveProfile}" HorizontalAlignment="Stretch"
                     CommandParameter="{Binding ElementName=passwords}" 
                     Width="255"
+                    Margin="-4 10 0 0"
                     >SAVE PROFILE</Button>
             <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" />
         </StackPanel>

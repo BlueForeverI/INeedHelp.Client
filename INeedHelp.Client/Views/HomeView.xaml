@@ -53,16 +53,17 @@
                        />
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
-                        Margin="0 30 20 0">
+                        Margin="0 30 20 0" x:Name="UserInfoContainer">
                 <Image Width="50" Height="50" 
                        Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
                 <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
             </StackPanel>
         </Grid>
 
-        <StackPanel Grid.Row="1" Margin="120 0 0 0">
+        <StackPanel Grid.Row="1" Margin="120 0 0 0" x:Name="MainContainer">
             
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 0 15">
+            <Controls:WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 0 15"
+                                x:Name="FilterContainer">
                 <TextBlock Text="Show requests within " />
                 <TextBox Text="{Binding MaxDistance, Mode=TwoWay}" 
                          Width="50" FontSize="20" Height="40" VerticalAlignment="Center" 
@@ -70,7 +71,7 @@
                 <TextBlock Text="kilometers" />
                 <Button Command="{Binding FilterRequests}"
                         FontSize="20" VerticalAlignment="Top" Margin="10 0 0 0">FILTER REQUESTS</Button>
-            </StackPanel>
+            </Controls:WrapPanel>
             <ProgressBar IsIndeterminate="True" 
                          Visibility="{Binding Path=RequestsLoading, Converter={StaticResource boolToVisibilityConverter}}"/>
             <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Enabled"
@@ -145,8 +146,29 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="FontSize">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="20"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Margin">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="10 0 0 20"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MainContainer" Storyboard.TargetProperty="Margin">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="UserInfoContainer" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MainContainer" Storyboard.TargetProperty="HorizontalAlignment">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Center"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FilterContainer" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
                         </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
