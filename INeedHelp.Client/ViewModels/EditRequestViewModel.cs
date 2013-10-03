@@ -19,7 +19,15 @@ namespace INeedHelp.Client.ViewModels
     public class EditRequestViewModel : BaseViewModel
     {
         public HelpRequestModel Request { get; set; }
-        public int CommentsCount { get { return Request.Comments.Count(); } }
+        
+        public int CommentsCount
+        {
+            get
+            {
+                return (Request != null && Request.Comments != null) 
+                    ? Request.Comments.Count() : 0;
+            }
+        }
 
         public EditRequestViewModel()
         {
@@ -69,7 +77,7 @@ namespace INeedHelp.Client.ViewModels
         }
 
         private ICommand exportRequest;
-        private TypedEventHandler<DataTransferManager, DataRequestedEventArgs> _handler;
+        private static TypedEventHandler<DataTransferManager, DataRequestedEventArgs> _handler;
 
         public ICommand ExportRequest
         {
@@ -101,9 +109,25 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleSaveChanges(object obj)
         {
+
+            if(string.IsNullOrEmpty(Request.Title) || string.IsNullOrWhiteSpace(Request.Title))
+            {
+                ErrorMessage = "Enter a request title";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Request.Text) || string.IsNullOrWhiteSpace(Request.Text))
+            {
+                ErrorMessage = "Enter a request text";
+                return;
+            }
+
+            IsSavingRequest = true;
+            OnPropertyChanged("IsSavingRequest");
+
             await HelpRequestsPersister.EditRequest(Request, AccountManager.CurrentUser.SessionKey);
-            NavigationService.Navigate(ViewType.MyRequests);
             NotificationsManager.ShowNotification("Request details saved");
+            NavigationService.Navigate(ViewType.MyRequests);
         }
 
         private async void HandleAddHelper(object obj)
@@ -115,17 +139,22 @@ namespace INeedHelp.Client.ViewModels
 
         public int HelpersCount
         {
-            get { return Request.Helpers.Count(); }
+            get { return (Request != null && Request.Comments != null) ? Request.Helpers.Count() : 0; }
         }
 
         public IEnumerable<UserModel> SuggestedHelpers
         {
             get
             {
-                return Request.Comments.Select(c => c.User)
-                    .Where(u => !Request.Helpers.Any(h => h.Id == u.Id)).Distinct(new UserModelComparer());
+
+                return (Request != null && Request.Comments != null) ? 
+                    Request.Comments.Select(c => c.User)
+                    .Where(u => !Request.Helpers.Any(h => h.Id == u.Id)).Distinct(new UserModelComparer()) : 
+                    new List<UserModel>();
             }
         }
+
+        public bool IsSavingRequest { get; set; }
 
         private void HandleEditRequestLoaded(object obj)
         {

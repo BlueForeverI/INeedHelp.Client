@@ -69,6 +69,8 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        public bool IsAddingRequest { get; set; }
+
         private async void HandleGetPictureFromFile(object obj)
         {
             var openPicker = new FileOpenPicker();
@@ -81,9 +83,16 @@ namespace INeedHelp.Client.ViewModels
             var file = await openPicker.PickSingleFileAsync();
             if (file != null)
             {
+                IsAddingRequest = true;
+                OnPropertyChanged("IsAddingRequest");
+
                 var url = await ImageUploader.UploadImage(file);
                 PictureUrl = url;
                 OnPropertyChanged("PictureUrl");
+
+
+                IsAddingRequest = false;
+                OnPropertyChanged("IsAddingRequest");
             }
         }
 
@@ -96,16 +105,35 @@ namespace INeedHelp.Client.ViewModels
 
             if (file != null)
             {
+                IsAddingRequest = true;
+                OnPropertyChanged("IsAddingRequest");
+
                 var url = await ImageUploader.UploadImage(file);
                 PictureUrl = url;
                 OnPropertyChanged("PictureUrl");
+
+                IsAddingRequest = false;
+                OnPropertyChanged("IsAddingRequest");
             }
         }
 
         private async void HandleAddRequest(object obj)
         {
+            
             try
             {
+                if(string.IsNullOrEmpty(Title) || string.IsNullOrWhiteSpace(Title))
+                {
+                    ErrorMessage = "Enter a request title";
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(Text) || string.IsNullOrWhiteSpace(Text))
+                {
+                    ErrorMessage = "Enter a request text";
+                    return;
+                }
+
                 var geolocator = new Geolocator();
                 geolocator.DesiredAccuracy = PositionAccuracy.High;
          
@@ -124,6 +152,9 @@ namespace INeedHelp.Client.ViewModels
                                       Coordinates = coordinates
                                   };
 
+                IsAddingRequest = true;
+                OnPropertyChanged("IsAddingRequest");
+
                 await HelpRequestsPersister.AddRequest(request, AccountManager.CurrentUser.SessionKey);
                 NavigationService.Navigate(ViewType.MyRequests);
                 NotificationsManager.ShowNotification("Request added");
@@ -132,6 +163,9 @@ namespace INeedHelp.Client.ViewModels
             catch (Exception ex)
             {
                 ErrorMessage = "Unable to get location";
+
+                IsAddingRequest = false;
+                OnPropertyChanged("IsAddingRequest");
             }
         }
     }

@@ -53,9 +53,9 @@
                          Visibility="{Binding Path=LoggingIn, Converter={StaticResource boolToVisibilityConverter}}" />
             <HyperlinkButton Command="{Binding GoToRegister}" 
                              HorizontalAlignment="Center"
-                             FontSize="25" Margin="0 20 0 0">Register an account</HyperlinkButton>
-            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" 
-                       Width="280" TextWrapping="Wrap"/>
+                             FontSize="30" Margin="0 20 0 0">REGISTER AN ACCOUNT</HyperlinkButton>
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="White" MaxWidth="350"
+                        TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </StackPanel>
         
         <VisualStateManager.VisualStateGroups>

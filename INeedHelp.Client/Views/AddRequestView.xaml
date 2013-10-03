@@ -13,6 +13,9 @@
         <ViewModels:AddRequestViewModel />
     </Page.DataContext>
 
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Page.Resources>
 
     <Page.BottomAppBar>
         <AppBar VerticalAlignment="Bottom">
@@ -63,7 +66,9 @@
                      TextWrapping="Wrap" AcceptsReturn="True" Height="320"/>
                 <Button Command="{Binding AddRequest}" HorizontalAlignment="Stretch"
                         Margin="0 15 0 0" >SUBMIT</Button>
-                <TextBlock Text="{Binding SuccessMessage}" />
+                <ProgressBar IsIndeterminate="True" 
+                             Visibility="{Binding Path=IsAddingRequest, Converter={StaticResource boolToVisibilityConverter}}" />
+                <TextBlock Text="{Binding ErrorMessage}" />
             </StackPanel>
             <StackPanel Margin="20 0 0 0">
                 <TextBlock>REQUEST PICTURE</TextBlock>

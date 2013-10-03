@@ -60,3 +60,6 @@ C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\ob
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Views\ProfileSettingsView.xaml
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Callisto.pri.xml
 C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\itextsharp.dll
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Common\Copy of StandardStyles.g.i.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Common\Copy of StandardStyles.g.cs
+C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\obj\Debug\Common\Copy of StandardStyles.xaml

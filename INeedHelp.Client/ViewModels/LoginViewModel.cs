@@ -60,10 +60,22 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleLogin(object obj)
         {
+            var passwordBox = obj as PasswordBox;
+            if(string.IsNullOrEmpty(Username) || string.IsNullOrWhiteSpace(Username))
+            {
+                ErrorMessage = "Enter a username";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(passwordBox.Password) || string.IsNullOrWhiteSpace(passwordBox.Password))
+            {
+                ErrorMessage = "Enter a password";
+                return;
+            }
+
             LoggingIn = true;
             OnPropertyChanged("LoggingIn");
 
-            var passwordBox = obj as PasswordBox;
             var passwordHash = Sha1Encrypter.ConvertToSha1(passwordBox.Password);
             var loggedUser = await UsersPersister.Login(Username, passwordHash);
 

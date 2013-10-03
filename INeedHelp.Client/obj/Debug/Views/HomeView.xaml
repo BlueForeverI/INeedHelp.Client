@@ -56,7 +56,7 @@
                         Margin="0 30 20 0" x:Name="UserInfoContainer">
                 <Image Width="50" Height="50" 
                        Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
-                <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding Username}" VerticalAlignment="Center" FontSize="30"/>
             </StackPanel>
         </Grid>
 

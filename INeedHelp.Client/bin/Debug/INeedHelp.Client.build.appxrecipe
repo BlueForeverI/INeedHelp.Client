@@ -56,11 +56,18 @@
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Assets\WideLogo.png">
+      <PackagePath>Assets\WideLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Common\Copy of StandardStyles.xaml">
+      <PackagePath>Common\Copy of StandardStyles.xaml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>

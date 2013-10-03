@@ -16,8 +16,8 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="INeedHelp.Client.App">
       <VisualElements DisplayName="INeedHelp.Client" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="INeedHelp.Client" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
-        <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="Assets\SplashScreen.png" />
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#860202" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.search" />

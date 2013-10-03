@@ -14,6 +14,10 @@
         <ViewModels:EditRequestViewModel />
     </Page.DataContext>
 
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Page.Resources>
+    
     <Page.BottomAppBar>
         <AppBar VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -81,7 +85,9 @@
                 </StackPanel>
                 <Button Command="{Binding SaveChanges}" HorizontalAlignment="Stretch"
                         Margin="0 20 0 0">SAVE CHANGES</Button>
-                <TextBlock Text="{Binding SuccessMessage}" />
+                <ProgressBar IsIndeterminate="True" 
+                             Visibility="{Binding Path=IsSavingRequest, Converter={StaticResource boolToVisibilityConverter}}" />
+                <TextBlock Text="{Binding ErrorMessage}" TextWrapping="Wrap" />
             </StackPanel>
             <StackPanel Grid.Column="1" Margin="10 0 0 0">
                 <TextBlock>

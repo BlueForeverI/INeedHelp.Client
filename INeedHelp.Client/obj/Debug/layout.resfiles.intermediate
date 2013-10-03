@@ -2,7 +2,9 @@ Assets\Logo.png
 Assets\SmallLogo.png
 Assets\SplashScreen.png
 Assets\StoreLogo.png
+Assets\WideLogo.png
 App.xaml
+Common\Copy of StandardStyles.xaml
 Common\StandardStyles.xaml
 Views\AddRequestView.xaml
 Views\EditRequestView.xaml

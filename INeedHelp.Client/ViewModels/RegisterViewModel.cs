@@ -127,11 +127,36 @@ namespace INeedHelp.Client.ViewModels
 
         private async void HandleRegister(object obj)
         {
+            var passwordBox = obj as PasswordBox;
+            var password = passwordBox.Password;
+
+            if(string.IsNullOrEmpty(Username) || string.IsNullOrWhiteSpace(Username))
+            {
+                ErrorMessage = "Enter a username";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password) || string.IsNullOrWhiteSpace(password))
+            {
+                ErrorMessage = "Enter a password";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(FirstName) || string.IsNullOrWhiteSpace(FirstName))
+            {
+                ErrorMessage = "Enter a first name";
+                return;
+            }
+
+            if (string.IsNullOrEmpty(LastName) || string.IsNullOrWhiteSpace(LastName))
+            {
+                ErrorMessage = "Enter a last name";
+                return;
+            }
+
             Registering = true;
             OnPropertyChanged("Registering");
 
-            var passwordBox = obj as PasswordBox;
-            var password = passwordBox.Password;
             var passwordHash = Sha1Encrypter.ConvertToSha1(password);
 
             var userModel = new UserModel()
