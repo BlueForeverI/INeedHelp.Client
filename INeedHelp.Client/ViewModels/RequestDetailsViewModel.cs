@@ -19,12 +19,12 @@ namespace INeedHelp.Client.ViewModels
 
         public int CommentsCount
         {
-            get { return Request.Comments.Count(); }
+            get { return (Request != null && Request.Comments != null) ? Request.Comments.Count() : 0; }
         }
 
         public int HelpersCount
         {
-            get { return Request.Helpers.Count(); }
+            get { return (Request != null && Request.Comments != null) ? Request.Helpers.Count() : 0; }
         }
 
         public RequestDetailsViewModel()

@@ -39,7 +39,6 @@ namespace INeedHelp.Client.Views
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-
             (DataContext as EditRequestViewModel).EditRequestLoaded.Execute(navigationParameter);
         }
 

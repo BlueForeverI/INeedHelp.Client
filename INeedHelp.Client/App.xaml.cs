@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Callisto.Controls;
+using INeedHelp.Client.Data;
 using INeedHelp.Client.Helpers;
 using INeedHelp.Client.ViewModels;
 using INeedHelp.Client.Views;
+using ParseStarterProject.Services;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -49,9 +51,21 @@ namespace INeedHelp.Client
 
         private void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
-            SettingsCommand command = new SettingsCommand("profile-settings", "Profile Settings",
+            SettingsCommand profileSettingsCommand = new SettingsCommand("profile-settings", "Profile Settings",
                                                           HandleProfileSettingsCommandRequest);
-            args.Request.ApplicationCommands.Add(command);
+            args.Request.ApplicationCommands.Add(profileSettingsCommand);
+
+            SettingsCommand privaciPolicyCommand = new SettingsCommand("privacy-policy", "Privacy Policy",
+                                                          HandlePrivacyPolocySettingsCommand);
+            args.Request.ApplicationCommands.Add(privaciPolicyCommand);
+        }
+
+        private void HandlePrivacyPolocySettingsCommand(IUICommand command)
+        {
+            var settings = new SettingsFlyout();
+            settings.Content = new PrivacyPolicySettingsView();
+            settings.HeaderText = "Privacy Policy";
+            settings.IsOpen = true;
         }
 
         private void HandleProfileSettingsCommandRequest(IUICommand command)
@@ -60,7 +74,7 @@ namespace INeedHelp.Client
             settings.Content = settingsView;
             settingsView.DataContext = settingsViewModel;
             settingsViewModel.LoadProperties();
-            settingsViewModel.PictureReceived += (sender, args) => { HandleProfileSettingsCommandRequest(command);};
+            settingsViewModel.PictureReceived += (sender, args) => HandleProfileSettingsCommandRequest(command);
             settings.HeaderText = "Profile Settings";
             settings.IsOpen = true;
 
@@ -72,7 +86,7 @@ namespace INeedHelp.Client
         /// search results, and so forth.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        protected override async void OnLaunched(LaunchActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -102,6 +116,15 @@ namespace INeedHelp.Client
                     throw new Exception("Failed to create initial page");
                 }
             }
+
+            if (args.TileId != "App")
+            {
+                int requestId = int.Parse(args.Arguments);
+                var request = await HelpRequestsPersister.GetRequestById(requestId,
+                    AccountManager.CurrentUser.SessionKey);
+                NavigationService.Navigate(ViewType.EditRequest, request);
+            }
+
             // Ensure the current window is active
             Window.Current.Activate();
 

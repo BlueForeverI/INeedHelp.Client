@@ -28,6 +28,9 @@
                         <Setter Property="FontSize" Value="30" />
                         <Setter Property="Height" Value="50" />
                     </Style>
+                    <Style TargetType="AppBar">
+                        <Setter Property="Background" Value="#580202" />
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 

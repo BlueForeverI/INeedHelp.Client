@@ -109,7 +109,7 @@ namespace INeedHelp.Client.ViewModels
             await UsersPersister.Edit(user, AccountManager.CurrentUser.SessionKey);
             var newUser = await UsersPersister.GetUserBySessionKey(AccountManager.CurrentUser.SessionKey);
             AccountManager.CurrentUser = newUser;
-            NotificationsManager.ShowNotification("Profile saved successfully");
+            NotificationsManager.ShowToastNotification("Profile saved successfully");
         }
 
         private async void HandleGetPictureFromFile(object obj)

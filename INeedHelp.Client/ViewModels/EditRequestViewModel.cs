@@ -92,6 +92,38 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
+        private ICommand addTile;
+        public ICommand AddTile
+        {
+            get
+            {
+                if(this.addTile == null)
+                {
+                    this.addTile = new RelayCommand(HandleAddTile);
+                }
+
+                return this.addTile;
+            }
+        }
+
+        private async void HandleAddTile(object obj)
+        {
+            var tileID = "SecondaryTile." + Request.Id.ToString();
+            var shortName = Request.Title;
+            var displayName = Request.Title;
+            var secondaryTileArg = Request.Id.ToString();
+            var squareLogo = new System.Uri("ms-appx:///Assets/StoreLogo.png");
+            var wideLogo = new System.Uri("ms-appx:///Assets/WideLogo.png");
+            var tileOptions = Windows.UI.StartScreen.TileOptions.ShowNameOnWideLogo | 
+                Windows.UI.StartScreen.TileOptions.ShowNameOnLogo;
+
+            var secondaryTile = new Windows.UI.StartScreen.SecondaryTile(
+                tileID, shortName, displayName, secondaryTileArg, tileOptions, squareLogo, wideLogo);
+            await secondaryTile.RequestCreateAsync();
+
+            NotificationsManager.ShowToastNotification("Secondary tile added successfully!");
+        }
+
         private async void HandleExportRequest(object obj)
         {
             FileSavePicker picker = new FileSavePicker();
@@ -103,7 +135,7 @@ namespace INeedHelp.Client.ViewModels
             if(file != null)
             {
                 await RequestExporter.ExportToHtml(Request, file);
-                NotificationsManager.ShowNotification("Request exported successfully");
+                NotificationsManager.ShowToastNotification("Request exported successfully");
             }
         }
 
@@ -126,7 +158,7 @@ namespace INeedHelp.Client.ViewModels
             OnPropertyChanged("IsSavingRequest");
 
             await HelpRequestsPersister.EditRequest(Request, AccountManager.CurrentUser.SessionKey);
-            NotificationsManager.ShowNotification("Request details saved");
+            NotificationsManager.ShowToastNotification("Request details saved");
             NavigationService.Navigate(ViewType.MyRequests);
         }
 
@@ -155,6 +187,7 @@ namespace INeedHelp.Client.ViewModels
         }
 
         public bool IsSavingRequest { get; set; }
+
 
         private void HandleEditRequestLoaded(object obj)
         {

@@ -157,7 +157,7 @@ namespace INeedHelp.Client.ViewModels
 
                 await HelpRequestsPersister.AddRequest(request, AccountManager.CurrentUser.SessionKey);
                 NavigationService.Navigate(ViewType.MyRequests);
-                NotificationsManager.ShowNotification("Request added");
+                NotificationsManager.ShowToastNotification("Request added");
 
             }
             catch (Exception ex)

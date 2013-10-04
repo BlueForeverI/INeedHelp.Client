@@ -18,10 +18,18 @@
     <Page.BottomAppBar>
         <AppBar VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Button Command="{Binding Logout}">Logout</Button>
-                <Button Command="{Binding GoToHome}">Home</Button>
-                <Button Command="{Binding GoToAddRequest}">Add Request</Button>
-                <Button Command="{Binding GoToMyRequests}">My Requests</Button>
+                <Button Command="{Binding Logout}" 
+                        Style="{StaticResource ClosePaneAppBarButtonStyle}"
+                        AutomationProperties.Name="Logout"></Button>
+                <Button Command="{Binding GoToHome}"
+                        Style="{StaticResource HomeAppBarButtonStyle}"
+                        AutomationProperties.Name="Home"></Button>
+                <Button Command="{Binding GoToAddRequest}" 
+                        Style="{StaticResource AddAppBarButtonStyle}"
+                        AutomationProperties.Name="Add Request"></Button>
+                <Button Command="{Binding GoToMyRequests}" 
+                        Style="{StaticResource ContactInfoAppBarButtonStyle}"
+                        AutomationProperties.Name="My Requests"></Button>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>

@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-10-03T18:14:31.745</Modified>
+      <Modified>2013-10-04T10:03:04.162</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.exe">
       <PackagePath>INeedHelp.Client.exe</PackagePath>
-      <Modified>2013-10-03T19:41:05.168</Modified>
+      <Modified>2013-10-04T11:22:25.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.pdb">
       <PackagePath>INeedHelp.Client.pdb</PackagePath>
-      <Modified>2013-10-03T19:41:05.105</Modified>
+      <Modified>2013-10-04T11:22:24.690</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
@@ -81,33 +81,33 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2013-10-03T17:31:24.300</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Images\WideTile.png">
+      <PackagePath>Images\WideTile.png</PackagePath>
+      <Modified>2013-10-04T10:02:37.394</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
       <Modified>2013-09-27T12:36:41.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2013-10-03T18:17:31.807</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Common\Copy of StandardStyles.xaml">
-      <PackagePath>Common\Copy of StandardStyles.xaml</PackagePath>
-      <Modified>2013-10-03T17:34:10.242</Modified>
+      <Modified>2013-10-03T20:34:37.412</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2013-10-03T18:06:15.025</Modified>
+      <Modified>2013-10-03T20:42:04.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\AddRequestView.xaml">
       <PackagePath>Views\AddRequestView.xaml</PackagePath>
-      <Modified>2013-10-03T18:52:33.668</Modified>
+      <Modified>2013-10-03T21:28:37.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\EditRequestView.xaml">
       <PackagePath>Views\EditRequestView.xaml</PackagePath>
-      <Modified>2013-10-03T19:05:04.563</Modified>
+      <Modified>2013-10-04T10:40:50.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\HomeView.xaml">
       <PackagePath>Views\HomeView.xaml</PackagePath>
-      <Modified>2013-10-03T18:12:46.974</Modified>
+      <Modified>2013-10-04T09:49:23.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\LoginView.xaml">
       <PackagePath>Views\LoginView.xaml</PackagePath>
@@ -115,7 +115,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\MyRequestsView.xaml">
       <PackagePath>Views\MyRequestsView.xaml</PackagePath>
-      <Modified>2013-10-02T22:49:50.036</Modified>
+      <Modified>2013-10-03T21:30:00.516</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\PrivacyPolicySettingsView.xaml">
+      <PackagePath>Views\PrivacyPolicySettingsView.xaml</PackagePath>
+      <Modified>2013-10-04T09:45:41.549</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\ProfileSettingsView.xaml">
       <PackagePath>Views\ProfileSettingsView.xaml</PackagePath>
@@ -127,11 +131,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RequestDetailsView.xaml">
       <PackagePath>Views\RequestDetailsView.xaml</PackagePath>
-      <Modified>2013-10-02T22:56:40.072</Modified>
+      <Modified>2013-10-04T10:36:01.346</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\SearchRequestsView.xaml">
       <PackagePath>Views\SearchRequestsView.xaml</PackagePath>
-      <Modified>2013-10-01T22:34:47.878</Modified>
+      <Modified>2013-10-03T20:56:48.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Callisto.1.3.1\lib\winrt45\Callisto\themes\Generic.xaml">
       <PackagePath>Callisto\themes\Generic.xaml</PackagePath>
@@ -139,7 +143,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-10-03T18:14:31.354</Modified>
+      <Modified>2013-10-04T10:03:03.877</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -4,15 +4,16 @@ Assets\SplashScreen.png
 Assets\StoreLogo.png
 Assets\WideLogo.png
 App.xaml
-Common\Copy of StandardStyles.xaml
 Common\StandardStyles.xaml
 Views\AddRequestView.xaml
 Views\EditRequestView.xaml
 Views\HomeView.xaml
 Views\LoginView.xaml
 Views\MyRequestsView.xaml
+Views\PrivacyPolicySettingsView.xaml
 Views\ProfileSettingsView.xaml
 Views\RegisterView.xaml
 Views\RequestDetailsView.xaml
 Views\SearchRequestsView.xaml
 Common\ReadMe.txt
+Images\WideTile.png

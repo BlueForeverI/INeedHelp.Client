@@ -55,7 +55,7 @@ namespace INeedHelp.Client.Views
 
         private void HomeViewLoaded(object sender, RoutedEventArgs e)
         {
-            (DataContext as AppViewModel).HomeViewLoaded.Execute(null);
+            (DataContext as HomeViewModel).HomeViewLoaded.Execute(null);
         }
 
         private void HelpRequestsSelectionChanged(object sender, SelectionChangedEventArgs e)

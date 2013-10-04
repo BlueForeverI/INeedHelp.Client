@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using INeedHelp.Client.Commands;
 using INeedHelp.Client.Data;
@@ -10,19 +8,16 @@ using INeedHelp.Client.Helpers;
 using INeedHelp.Client.Models;
 using ParseStarterProject.Services;
 using Windows.Devices.Geolocation;
-using Windows.Security.Credentials;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 
 namespace INeedHelp.Client.ViewModels
 {
-    public class AppViewModel : BaseViewModel
+    public class HomeViewModel : BaseViewModel
     {
         public string MaxDistance { get; set; }
 
         public IEnumerable<HelpRequestModel> HelpRequests { get; set; } 
 
-        public AppViewModel()
+        public HomeViewModel()
         {
             CheckIsUserLogged();
         }
@@ -51,20 +46,22 @@ namespace INeedHelp.Client.ViewModels
         {
             try
             {
-
+                int oldCount = (HelpRequests != null) ? HelpRequests.Count() : 0;
                 HelpRequests = await HelpRequestsPersister.GetAllRequests(
                     AccountManager.CurrentUser.SessionKey);
-
 
                 RequestsLoading = false;
                 OnPropertyChanged("RequestsLoading");
                 OnPropertyChanged("RequestsVisible");
 
                 OnPropertyChanged("HelpRequests");
+
+                NotificationsManager.ShowTileNotification("Help Requests");
+                NotificationsManager.ShowBadgeNotification(HelpRequests.Count());
             }
             catch (Exception)
             {
-                NotificationsManager.ShowNotification("Error while getting help requests.\nCheck your internet connection");
+                ErrorMessage = "Error while getting help requests. Check your internet connection";
             }
         }
 
