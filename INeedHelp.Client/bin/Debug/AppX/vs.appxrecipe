@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.exe">
       <PackagePath>INeedHelp.Client.exe</PackagePath>
-      <Modified>2013-10-04T11:22:25.024</Modified>
+      <Modified>2013-10-05T11:24:57.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.pdb">
       <PackagePath>INeedHelp.Client.pdb</PackagePath>
-      <Modified>2013-10-04T11:22:24.690</Modified>
+      <Modified>2013-10-05T11:24:57.298</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
@@ -99,15 +99,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\AddRequestView.xaml">
       <PackagePath>Views\AddRequestView.xaml</PackagePath>
-      <Modified>2013-10-03T21:28:37.742</Modified>
+      <Modified>2013-10-05T11:20:04.008</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\EditRequestView.xaml">
       <PackagePath>Views\EditRequestView.xaml</PackagePath>
-      <Modified>2013-10-04T10:40:50.625</Modified>
+      <Modified>2013-10-05T11:20:12.883</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\HomeView.xaml">
       <PackagePath>Views\HomeView.xaml</PackagePath>
-      <Modified>2013-10-04T09:49:23.800</Modified>
+      <Modified>2013-10-05T11:17:41.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\LoginView.xaml">
       <PackagePath>Views\LoginView.xaml</PackagePath>
@@ -115,7 +115,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\MyRequestsView.xaml">
       <PackagePath>Views\MyRequestsView.xaml</PackagePath>
-      <Modified>2013-10-03T21:30:00.516</Modified>
+      <Modified>2013-10-05T11:20:29.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\PrivacyPolicySettingsView.xaml">
       <PackagePath>Views\PrivacyPolicySettingsView.xaml</PackagePath>
@@ -123,7 +123,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\ProfileSettingsView.xaml">
       <PackagePath>Views\ProfileSettingsView.xaml</PackagePath>
-      <Modified>2013-10-02T21:51:55.760</Modified>
+      <Modified>2013-10-05T10:06:38.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RegisterView.xaml">
       <PackagePath>Views\RegisterView.xaml</PackagePath>
@@ -131,11 +131,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\RequestDetailsView.xaml">
       <PackagePath>Views\RequestDetailsView.xaml</PackagePath>
-      <Modified>2013-10-04T10:36:01.346</Modified>
+      <Modified>2013-10-05T11:20:43.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\Views\SearchRequestsView.xaml">
       <PackagePath>Views\SearchRequestsView.xaml</PackagePath>
-      <Modified>2013-10-03T20:56:48.593</Modified>
+      <Modified>2013-10-05T11:24:43.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Callisto.1.3.1\lib\winrt45\Callisto\themes\Generic.xaml">
       <PackagePath>Callisto\themes\Generic.xaml</PackagePath>

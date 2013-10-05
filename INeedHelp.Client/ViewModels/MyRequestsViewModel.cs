@@ -26,7 +26,7 @@ namespace INeedHelp.Client.ViewModels
             }
             catch (Exception)
             {
-                // handle exception here
+
             }
         }
 

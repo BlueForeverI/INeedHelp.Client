@@ -134,8 +134,6 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-        
-
         private void HandleHomeViewLoaded(object obj)
         {
             CheckIsUserLogged();

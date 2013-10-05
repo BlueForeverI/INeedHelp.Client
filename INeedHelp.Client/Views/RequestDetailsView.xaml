@@ -58,6 +58,10 @@
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
                         Margin="0 30 20 0" x:Name="UserInfoContainer">
+                <TextBlock Text="{Binding Reputation}" FontSize="30" VerticalAlignment="Center"
+                           Foreground="Gold"
+                           ToolTipService.ToolTip="Reputation"
+                           Margin="0 0 10 0"/>
                 <Image Width="50" Height="50" 
                        Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
                 <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
@@ -78,7 +82,6 @@
                 <RowDefinition Height="220"/>
             </Grid.RowDefinitions>
 
-            <!--<StackPanel Grid.Column="0">-->
             <TextBlock Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300"
                           TextWrapping="Wrap" Grid.Row="0" Grid.Column="1"
                        VerticalAlignment="Bottom" Margin="10 0 0 0"/>
@@ -87,9 +90,7 @@
                    Width="350" Height="350" Stretch="Fill" VerticalAlignment="Top"
                    Margin="10 0 0 0"
                        Grid.Row="1" Grid.Column="1"/>
-            <!--</StackPanel>-->
 
-            <!--<StackPanel HorizontalAlignment="Left" Grid.Column="1">-->
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left"
                              Grid.Column="0">
                 <Image Source="{Binding Path=Request.User.ProfilePictureUrl}"
@@ -112,7 +113,6 @@
             </StackPanel>
             <!--</StackPanel>-->
 
-            <!--<StackPanel Grid.Column="2">-->
             <TextBlock Grid.Row="0" Grid.Column="2" Margin="20 0 0 0"
                        VerticalAlignment="Bottom">
                     <Run Text="{Binding CommentsCount}" />
@@ -143,9 +143,7 @@
 
             <Button Command="{Binding AddComment}" Margin="20 0 0 165"
                     Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch">ADD COMMENT</Button>
-            <!--</StackPanel>-->
 
-            <!--<StackPanel Grid.Column="3">-->
                 <TextBlock Grid.Row="0" Grid.Column="3" Margin="20 0 0 0"
                            VerticalAlignment="Bottom">
                     <Run Text="{Binding HelpersCount}" />
@@ -163,7 +161,6 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            <!--</StackPanel>-->
         </Grid>
 
 

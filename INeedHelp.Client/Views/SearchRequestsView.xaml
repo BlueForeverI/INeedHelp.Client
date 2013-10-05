@@ -49,6 +49,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Style="{StaticResource PageHeaderTextStyle}">
@@ -56,6 +57,18 @@
                 <Run Text="{Binding QueryText}" />
                 <Run>"</Run>
             </TextBlock>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
+                        Margin="0 30 20 0" x:Name="UserInfoContainer">
+                <TextBlock Text="{Binding Reputation}" FontSize="30" VerticalAlignment="Center"
+                           Foreground="Gold"
+                           ToolTipService.ToolTip="Reputation"
+                           TextWrapping="Wrap"
+                           Margin="0 0 10 0"/>
+                <Image Width="50" Height="50" 
+                       Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
+                <TextBlock Text="{Binding Username}" VerticalAlignment="Center" FontSize="30"
+                           ToolTipService.ToolTip="Username"/>
+            </StackPanel>
         </Grid>
 
         <StackPanel Grid.Row="1" Margin="120 0 0 0">

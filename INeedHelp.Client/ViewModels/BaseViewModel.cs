@@ -23,6 +23,11 @@ namespace INeedHelp.Client.ViewModels
             get { return (AccountManager.CurrentUser != null) ? AccountManager.CurrentUser.ProfilePictureUrl : ""; }
         }
 
+        public int Reputation
+        {
+            get { return (AccountManager.CurrentUser != null) ? AccountManager.CurrentUser.Reputation : 0; }
+        }
+
         private string successMessage;
         private string errorMessage;
 

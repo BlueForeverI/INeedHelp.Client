@@ -178,7 +178,6 @@ namespace INeedHelp.Client.ViewModels
         {
             get
             {
-
                 return (Request != null && Request.Comments != null) ? 
                     Request.Comments.Select(c => c.User)
                     .Where(u => !Request.Helpers.Any(h => h.Id == u.Id)).Distinct(new UserModelComparer()) : 

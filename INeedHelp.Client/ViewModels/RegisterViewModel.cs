@@ -79,7 +79,6 @@ namespace INeedHelp.Client.ViewModels
             }
         }
 
-
         private async void HandleGetPictureFromFile(object obj)
         {
             var openPicker = new FileOpenPicker();

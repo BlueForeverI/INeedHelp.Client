@@ -61,6 +61,10 @@
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" 
                         Margin="0 30 20 0" x:Name="UserInfoContainer">
+                <TextBlock Text="{Binding Reputation}" FontSize="30" VerticalAlignment="Center"
+                           Foreground="Gold"
+                           ToolTipService.ToolTip="Reputation"
+                           Margin="0 0 10 0"/>
                 <Image Width="50" Height="50" 
                        Source="{Binding UserPictureUrl}" Stretch="Fill" Margin="0 0 10 0"/>
                 <TextBlock Text="{Binding Username}" VerticalAlignment="Center"/>
@@ -75,7 +79,6 @@
                 <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
 
-            <!--<StackPanel Orientation="Horizontal">-->
             <StackPanel HorizontalAlignment="Left" Grid.Column="0">
                 <TextBlock Text="TITLE" />
                 <TextBox Text="{Binding Path=Request.Title, Mode=TwoWay}" Width="300" 
@@ -158,7 +161,6 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
-            <!--</StackPanel>-->
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

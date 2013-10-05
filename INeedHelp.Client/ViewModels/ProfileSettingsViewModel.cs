@@ -102,8 +102,12 @@ namespace INeedHelp.Client.ViewModels
                                FirstName = FirstName,
                                LastName = LastName,
                                ProfilePictureUrl = ProfilePictureUrl,
-                               OldPasswordHash = (!string.IsNullOrEmpty(oldPassword)) ? Sha1Encrypter.ConvertToSha1(oldPassword) : null,
-                               NewPasswordHash = (!string.IsNullOrEmpty(newPassword)) ? Sha1Encrypter.ConvertToSha1(newPassword) : null,
+                               OldPasswordHash = (!string.IsNullOrEmpty(oldPassword)) 
+                                    ? Sha1Encrypter.ConvertToSha1(oldPassword) 
+                                    : null,
+                               NewPasswordHash = (!string.IsNullOrEmpty(newPassword)) 
+                                    ? Sha1Encrypter.ConvertToSha1(newPassword) 
+                                    : null,
                            };
 
             await UsersPersister.Edit(user, AccountManager.CurrentUser.SessionKey);
