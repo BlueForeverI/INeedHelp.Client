@@ -5,7 +5,7 @@
     <WindowsUser>George</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>A9FCBAF2896F6A62CA398CABCE27E872F861E572FADD91815478744EEEBFF164</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>B705CF890EEF9B018059C9C159D4AB4E4320070E7350EDAB8DDBDC0F53DFCBE6</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>bb0dc6ce-cdb7-4fa3-b7dd-27826556419a_1.0.0.0_neutral__mn0dvqpmbk0m2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>bb0dc6ce-cdb7-4fa3-b7dd-27826556419a_mn0dvqpmbk0m2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>bb0dc6ce-cdb7-4fa3-b7dd-27826556419a</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-10-04T10:03:04.162</Modified>
+      <Modified>2013-10-05T11:31:16.226</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.exe">
       <PackagePath>INeedHelp.Client.exe</PackagePath>
-      <Modified>2013-10-05T11:24:57.327</Modified>
+      <Modified>2013-10-05T11:31:15.283</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\INeedHelp.Client.pdb">
       <PackagePath>INeedHelp.Client.pdb</PackagePath>
-      <Modified>2013-10-05T11:24:57.298</Modified>
+      <Modified>2013-10-05T11:31:15.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
@@ -143,7 +143,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\George\Documents\Win8 XAML\Project\INeedHelp.Client\INeedHelp.Client\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-10-04T10:03:03.877</Modified>
+      <Modified>2013-10-05T11:31:15.577</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

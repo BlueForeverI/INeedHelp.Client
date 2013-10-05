@@ -9,7 +9,7 @@
   -->
   <Identity Name="bb0dc6ce-cdb7-4fa3-b7dd-27826556419a" Publisher="CN=George" Version="1.0.0.0" ProcessorArchitecture="neutral" />
   <Properties>
-    <DisplayName>INeedHelp.Client</DisplayName>
+    <DisplayName>INeedHelp</DisplayName>
     <PublisherDisplayName>George</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="INeedHelp.Client.exe" EntryPoint="INeedHelp.Client.App">
-      <VisualElements DisplayName="INeedHelp.Client" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="INeedHelp.Client" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
+      <VisualElements DisplayName="INeedHelp" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Applications for asking for help" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#860202" />
       </VisualElements>
